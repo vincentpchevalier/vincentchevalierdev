@@ -6,8 +6,8 @@ function init() {
 		location.pathname.includes('index.html') || location.pathname === '/';
 
 	main = isHome
-		? document.querySelector('#home main')
-		: document.querySelector('#projects main');
+		? document.querySelector('#home #main')
+		: document.querySelector('#projects #main');
 	toTop = document.querySelector('.to-top');
 
 	const mainObserver = new IntersectionObserver(showToTop, {
