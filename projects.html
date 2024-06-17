@@ -1,33 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>Vincent Chevalier | Projects</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link rel="stylesheet" href="./css/index.css" />
+
 
 		<link rel="stylesheet" href="./css/index.css" />
 
 		<script src="./js/index.js"></script>
 	</head>
 	<body id="projects">
-		<ul class="skip-links">
+
+		<ul class="skip-links" role="menu">
 			<li><a href="#nav">Skip to main navigation</a></li>
 			<li><a href="#main">Skip to main content</a></li>
 		</ul>
 		<header>
-			<h1>Vincent Chevalier</h1>
-			<nav id="nav">
-				<ul>
+			<nav class="navigation" id="nav">
+				<ul role="menu">
 					<li><a href="./index.html">Home</a></li>
 					<li><a href="./projects.html">Projects</a></li>
-					<li><button class="toggle">Light Mode/Dark Mode</button></li>
+					<li><button class="toggle">Dark Mode</button></li>
 				</ul>
 			</nav>
 		</header>
 
 		<main id="main">
 			<section class="project-descriptions">
-				<div class="wrapper">
+				<div class="container">
 					<h2>Project Descriptions</h2>
 					<ul class="project-list">
 						<li id="projectA">
@@ -80,11 +90,13 @@
 		</main>
 
 		<footer>
-			<div class="wrapper">
-				<a href="/">
+			<div class="container">
+				<a href="/" class="site-info">
 					<small>&copy; Vincent Chevalier 2024</small>
 				</a>
-				<a href="/"><small>Open Source / MIT License</small></a>
+				<a href="/" class="site-info"
+					><small>Open Source / MIT License</small></a
+				>
 				<a
 					class="to-top"
 					href="#main"
