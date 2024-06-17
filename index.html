@@ -8,10 +8,13 @@
 
 		<script src="./js/index.js"></script>
 	</head>
-	<body>
+	<body id="home">
+		<ul class="skip-links">
+			<li><a href="#nav">Skip to main navigation</a></li>
+			<li><a href="#main">Skip to main content</a></li>
+		</ul>
 		<header>
-			<h1>Vincent Chevalier</h1>
-			<nav>
+			<nav id="nav">
 				<ul>
 					<li><a href="./index.html">Home</a></li>
 					<li><a href="./projects.html">Projects</a></li>
@@ -19,26 +22,26 @@
 				</ul>
 			</nav>
 		</header>
-		<main>
+		<main id="main">
 			<section class="intro">
 				<div class="wrapper">
 					<div class="intro-image">
 						<img src="./images/vincent-chevalier.jpg" alt="Vincent Chevalier" />
 					</div>
 					<div class="intro-content">
-						<h2>Hello there 👋</h2>
-						<p>My name is Vincent Chevalier</p>
+						<h1>Hello there 👋</h1>
+						<h2>My name is Vincent Chevalier</h2>
 						<p>
-							I'm a Web Developer with a solid foundation in JavaScript,
-							Flutter/Dart, React Native, Node.js, Express, and MongoDB. I bring
-							over 10 years of creative experience in crafting engaging video
-							content for online channels and contemporary art galleries,
-							combining a passion for tech with expertise in front-end
-							development and project management. Currently, I'm focused on
-							finding work that challenges my creativity developing websites and
-							apps, while also serving as a teaching assistant for first-year
-							students of the Mobile Applications Design and Development program
-							at Algonquin College.
+							I'm a Web Developer with a solid foundation in JavaScript, HTML,
+							CSS, React, Node.js, Express, and MongoDB. I bring over 10 years
+							of creative experience in crafting engaging video content for
+							online channels and contemporary art galleries, combining a
+							passion for tech with expertise in front-end development and
+							project management. Currently, I'm focused on finding work that
+							challenges my creativity developing websites and apps, while also
+							serving as a teaching assistant for first-year students of the
+							Mobile Applications Design and Development program at Algonquin
+							College.
 						</p>
 					</div>
 				</div>
@@ -63,12 +66,14 @@
 				<div class="wrapper">
 					<h2>Skills</h2>
 					<ul class="skills-list">
+						<li>HTML</li>
+						<li>CSS</li>
 						<li>JavaScript</li>
-						<li>Flutter/Dart</li>
-						<li>React Native</li>
+						<li>React</li>
 						<li>Node.js</li>
 						<li>Express</li>
 						<li>MongoDB</li>
+						<li>Flutter/Dart</li>
 					</ul>
 				</div>
 			</section>
@@ -101,11 +106,21 @@
 				</form>
 			</section>
 		</main>
+
 		<footer>
-			<a href="/">
-				<small>&copy; Vincent Chevalier 2024</small>
-			</a>
-			<a href="/"><small>Open Source / MIT License</small></a>
+			<div class="wrapper">
+				<a href="/">
+					<small>&copy; Vincent Chevalier 2024</small>
+				</a>
+				<a href="/"><small>Open Source / MIT License</small></a>
+				<a
+					class="to-top"
+					href="#main"
+					aria-label="Click to scroll to top of main content"
+					>To top</a
+				>
+			</div>
 		</footer>
+		<div class="click-to-close"></div>
 	</body>
 </html>
