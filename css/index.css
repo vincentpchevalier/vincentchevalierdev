@@ -1,4 +1,93 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+ul:not([role='list']),
+ol:not([role='list']),
+ul[role='menu'],
+ol[role='menu'] {
+	padding: 0;
+	list-style: none;
+}
+
 body {
-	background-color: azure;
+	min-height: 100svh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+	margin: 0;
+
+	background-color: #f0ffff;
 	font-family: sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0 0 1.6rem;
+}
+
+a {
+	text-decoration-skip-ink: auto;
+}
+
+a:hover,
+a:focus,
+a:focus-visible {
+	color: #473447;
+}
+
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+	color: #2441a9;
+}
+
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+svg {
+	fill: currentColor;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }
