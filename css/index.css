@@ -295,6 +295,8 @@ footer .container {
 	border-bottom: none;
 }
 
-.to-top.visible {
+.to-top.visible,
+.to-top:focus-visible,
+.to-top.visible:focus-visible {
 	transform: none;
 }
