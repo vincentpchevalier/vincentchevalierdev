@@ -2,15 +2,18 @@ let main;
 let toTop;
 
 function init() {
-	main = document.querySelector('main');
-	toTop = document.querySelector('.to-top');
+	let isHome =
+		location.pathname.includes('index.html') || location.pathname === '/';
 
-	let page = main.id.split('-')[1];
+	main = isHome
+		? document.querySelector('#home main')
+		: document.querySelector('#projects main');
+	toTop = document.querySelector('.to-top');
 
 	const mainObserver = new IntersectionObserver(showToTop, {
 		root: null,
 		rootMargin: '50px',
-		threshold: `${page === 'home' ? 0.5 : 0.45}`,
+		threshold: `${isHome ? 0.5 : 0.45}`,
 	});
 
 	mainObserver.observe(main);
