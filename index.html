@@ -8,15 +8,119 @@
 
 		<script src="./js/index.js"></script>
 	</head>
-	<body>
+	<body id="home">
+		<ul class="skip-links">
+			<li><a href="#nav">Skip to main navigation</a></li>
+			<li><a href="#main">Skip to main content</a></li>
+		</ul>
 		<header>
-			<h1>Vincent Chevalier | Web Developer</h1>
+			<nav id="nav">
+				<ul>
+					<li><a href="./index.html">Home</a></li>
+					<li><a href="./projects.html">Projects</a></li>
+					<li><button class="toggle">Light Mode/Dark Mode</button></li>
+				</ul>
+			</nav>
 		</header>
-		<main>
-			<h2>About Me</h2>
+		<main id="main">
+			<section class="intro">
+				<div class="wrapper">
+					<div class="intro-image">
+						<img src="./images/vincent-chevalier.jpg" alt="Vincent Chevalier" />
+					</div>
+					<div class="intro-content">
+						<h1>Hello there 👋</h1>
+						<h2>My name is Vincent Chevalier</h2>
+						<p>
+							I'm a Web Developer with a solid foundation in JavaScript, HTML,
+							CSS, React, Node.js, Express, and MongoDB. I bring over 10 years
+							of creative experience in crafting engaging video content for
+							online channels and contemporary art galleries, combining a
+							passion for tech with expertise in front-end development and
+							project management. Currently, I'm focused on finding work that
+							challenges my creativity developing websites and apps, while also
+							serving as a teaching assistant for first-year students of the
+							Mobile Applications Design and Development program at Algonquin
+							College.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="projects">
+				<div class="wrapper">
+					<h2>Projects</h2>
+					<ul class="projects-list">
+						<li>
+							<a href="./projects.html#projectA"
+								>MADD Industry Projects - The Home App 🏡</a
+							>
+						</li>
+						<li><a href="./projects.html#projectB">Fun API Project 🚀</a></li>
+						<li><a href="./projects.html#projectC">Cool React App 😎</a></li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="skills">
+				<div class="wrapper">
+					<h2>Skills</h2>
+					<ul class="skills-list">
+						<li>HTML</li>
+						<li>CSS</li>
+						<li>JavaScript</li>
+						<li>React</li>
+						<li>Node.js</li>
+						<li>Express</li>
+						<li>MongoDB</li>
+						<li>Flutter/Dart</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="socials">
+				<div class="wrapper">
+					<h2>Where to find me</h2>
+					<ul>
+						<li><a href="https://github.com/vincentpchevalier">Github</a></li>
+						<li>
+							<a href="https://www.linkedin.com/in/vincentpchevalier/"
+								>LinkedIn</a
+							>
+						</li>
+						<li><a href="https://x.com/technivincent">Twitter</a></li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="contact">
+				<h2>Reach out</h2>
+				<form method="POST" class="contact-form">
+					<label for="name">Name</label>
+					<input type="text" id="name" name="name" required />
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" required />
+					<label for="message">Message</label>
+					<textarea id="message" name="message" required></textarea>
+					<button type="submit">Submit</button>
+				</form>
+			</section>
 		</main>
+
 		<footer>
-			<p>&copy; Vincent Chevalier 2024</p>
+			<div class="wrapper">
+				<a href="/">
+					<small>&copy; Vincent Chevalier 2024</small>
+				</a>
+				<a href="/"><small>Open Source / MIT License</small></a>
+				<a
+					class="to-top"
+					href="#main"
+					aria-label="Click to scroll to top of main content"
+					>To top</a
+				>
+			</div>
 		</footer>
+		<div class="click-to-close"></div>
 	</body>
 </html>
