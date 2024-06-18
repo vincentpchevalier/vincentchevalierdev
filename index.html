@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,24 +22,28 @@
 			<li><a href="#main">Skip to main content</a></li>
 		</ul>
 		<header>
-			<nav class="navigation" id="nav">
-				<ul role="menu">
-					<li><a href="./index.html">Home</a></li>
-					<li><a href="./projects.html">Projects</a></li>
-					<li><button class="toggle">Dark Mode</button></li>
-				</ul>
-			</nav>
+			<div class="container">
+				<nav class="navigation" id="nav">
+					<ul role="menu">
+						<li><a href="./index.html">Home</a></li>
+						<li><a href="./projects.html">Projects</a></li>
+						<li><button class="btn toggle" aria-pressed="false">DM</button></li>
+					</ul>
+				</nav>
+			</div>
 		</header>
 
 		<main id="main">
-			<section class="intro">
-				<div class="container">
-					<div class="intro-image">
+			<div class="container">
+				<section class="intro">
+					<div class="intro-banner">
 						<img src="./images/vincent-chevalier.jpg" alt="Vincent Chevalier" />
+						<div class="intro-hello">
+							<h2 class="greetings">Hello there 👋</h2>
+							<h1 class="greetings">My name's Vincent!</h1>
+						</div>
 					</div>
 					<div class="intro-content">
-						<h1>Hello there 👋</h1>
-						<h2>My name is Vincent Chevalier</h2>
 						<p>
 							I'm a Web Developer with a solid foundation in JavaScript, HTML,
 							CSS, React, Node.js, Express, and MongoDB. I bring over 10 years
@@ -53,11 +57,9 @@
 							College.
 						</p>
 					</div>
-				</div>
-			</section>
+				</section>
 
-			<section class="projects">
-				<div class="container">
+				<section class="projects">
 					<h2>Projects</h2>
 					<ul class="projects-list">
 						<li>
@@ -68,27 +70,26 @@
 						<li><a href="./projects.html#projectB">Fun API Project 🚀</a></li>
 						<li><a href="./projects.html#projectC">Cool React App 😎</a></li>
 					</ul>
-				</div>
-			</section>
+				</section>
 
-			<section class="skills">
-				<div class="container">
+				<section class="skills">
 					<h2>Skills</h2>
 					<ul class="skills-list">
-						<li>HTML</li>
-						<li>CSS</li>
-						<li>JavaScript</li>
-						<li>React</li>
-						<li>Node.js</li>
-						<li>Express</li>
-						<li>MongoDB</li>
-						<li>Flutter/Dart</li>
+						<li><p>HTML</p></li>
+						<li><p>CSS</p></li>
+						<li><p>JavaScript</p></li>
+						<li><p>React</p></li>
+						<li><p>Node.js</p></li>
+						<li><p>Express</p></li>
+						<li><p>MongoDB</p></li>
+						<li><p>Flutter/Dart</p></li>
+						<li><p>Git &amp; Github</p></li>
+						<li><p>Responsive Design</p></li>
+						<li><p>Project Management</p></li>
 					</ul>
-				</div>
-			</section>
+				</section>
 
-			<section class="socials">
-				<div class="container">
+				<section class="socials">
 					<h2>Where to find me</h2>
 					<ul>
 						<li><a href="https://github.com/vincentpchevalier">Github</a></li>
@@ -99,11 +100,9 @@
 						</li>
 						<li><a href="https://x.com/technivincent">Twitter</a></li>
 					</ul>
-				</div>
-			</section>
+				</section>
 
-			<section class="contact">
-				<div class="container">
+				<section class="contact">
 					<h2>Reach out</h2>
 					<form method="POST" class="contact-form">
 						<label for="name">Name</label>
@@ -112,10 +111,10 @@
 						<input type="email" id="email" name="email" required />
 						<label for="message">Message</label>
 						<textarea id="message" name="message" required></textarea>
-						<button type="submit">Submit</button>
+						<button type="submit" class="btn">Submit</button>
 					</form>
-				</div>
-			</section>
+				</section>
+			</div>
 		</main>
 
 		<footer>
@@ -126,14 +125,15 @@
 				<a href="/" class="site-info"
 					><small>Open Source / MIT License</small></a
 				>
-				<a
-					class="to-top"
-					href="#main"
-					aria-label="Click to scroll to top of main content"
-					>To top</a
-				>
 			</div>
+			<a
+				class="to-top"
+				href="#main"
+				aria-label="Click to scroll to top of main content"
+				>To top</a
+			>
 		</footer>
+
 		<div class="click-to-close"></div>
 	</body>
 </html>
