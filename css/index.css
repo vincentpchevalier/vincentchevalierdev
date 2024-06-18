@@ -200,6 +200,7 @@ textarea {
 	font-weight: 600;
 	transition: var(--hover-transition);
 	border: 0.2rem solid var(--font-color);
+	cursor: pointer;
 
 	&:hover,
 	&:focus,
@@ -258,7 +259,7 @@ section {
 	flex-grow: 1;
 
 	&:hover {
-		color: var(--pink);
+		color: var(--blue);
 	}
 }
 
