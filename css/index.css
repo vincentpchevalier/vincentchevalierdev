@@ -12,6 +12,10 @@
 	--margin-large: 3rem;
 }
 
+html {
+	transition: all 500ms;
+}
+
 html[data-theme='light'] {
 	--background-color: #f0ffff;
 	--font-color: #0d1d2a;
