@@ -51,6 +51,14 @@ function showToTop(entries) {
 	toTop.classList.add('visible');
 }
 
+// Form validation
+// if empty / invalid, change --focus-visible in contact class to --red
+// check email with regex, must have @ and .
+// name >= 2 characters
+// message >= 10 characters and <= 300
+// show message describing errors underneath the inputs
+// if valid, change --focus-visible in contact class to --green
+
 document.addEventListener('DOMContentLoaded', () => {
 	init();
 });
