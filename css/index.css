@@ -184,10 +184,30 @@ h2 {
 
 p,
 a,
-button {
+button,
+label,
+input,
+textarea {
 	font-size: clamp(1.4rem, 2vw, 2rem);
 	line-height: 1.8;
 	margin-bottom: 0;
+}
+
+.btn {
+	color: var(--font-color);
+	background-color: var(--background-color);
+	padding: 0.25rem 0.75rem;
+	font-weight: 600;
+	transition: var(--hover-transition);
+	border: 0.2rem solid var(--font-color);
+
+	&:hover,
+	&:focus,
+	&:focus-visible {
+		color: var(--background-color);
+		background-color: var(--font-color);
+		border: 0.2rem solid var(--font-color);
+	}
 }
 
 /* Container */
@@ -259,7 +279,7 @@ section {
 	}
 }
 
-/* Main */
+/* Main - Intro */
 
 .intro {
 	display: flex;
@@ -272,6 +292,52 @@ section {
 
 .intro-banner img {
 	margin-bottom: var(--margin-small);
+}
+
+/* Skills */
+
+.skills-list {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.skills-list li p {
+	background-color: var(--blue);
+	color: var(--background-color);
+	font-family: var(--header-font);
+	padding: 0.25rem 1rem;
+	border-radius: 0.25rem;
+}
+
+/* Form */
+
+.contact form {
+	display: flex;
+	flex-direction: column;
+}
+
+label {
+	margin-bottom: 0.5rem;
+}
+
+input,
+textarea {
+	color: var(--font-color);
+	background-color: #fff;
+	padding: 0.25rem 0.75rem;
+	transition: var(--hover-transition);
+	border: 0.2rem solid var(--font-color);
+	border-radius: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+form .btn {
+	border-radius: 0.5rem;
+	color: var(--background-color);
+	background-color: var(--blue);
+	border: 0.2rem solid var(--blue);
+	margin-top: 1rem;
 }
 
 /* Footer */
@@ -307,6 +373,7 @@ footer .container {
 		gap: 2rem;
 	}
 
+	/* Main - Tablet */
 	.intro {
 		flex-direction: row;
 		flex-wrap: wrap;
@@ -334,6 +401,11 @@ footer .container {
 		flex-shrink: 1;
 	}
 
+	input,
+	textarea {
+		padding: 0.5rem 1rem;
+	}
+
 	/* Footer - Tablet */
 	footer {
 		padding: 2rem 0 3rem;
@@ -353,6 +425,7 @@ footer .container {
 		--margin-large: 4rem;
 	}
 
+	/* Main - Desktop */
 	.intro-banner {
 		margin-bottom: var(--margin-small);
 	}
