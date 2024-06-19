@@ -1,6 +1,7 @@
 let main;
 let toTop;
 let button;
+let contactForm;
 
 function init() {
 	let isDark =
@@ -8,18 +9,21 @@ function init() {
 		matchMedia('(prefers-color-scheme: dark)').matches;
 	let isHome =
 		location.pathname.includes('index.html') || location.pathname === '/';
-
-	button = document.querySelector('.toggle');
-
-	button.setAttribute('aria-pressed', isDark ? false : true);
-	document.documentElement.dataset.theme = isDark ? 'dark' : 'light';
-
-	button.addEventListener('click', sync);
-
+  
 	main = isHome
 		? document.querySelector('#home #main')
 		: document.querySelector('#projects #main');
 	toTop = document.querySelector('.to-top');
+	button = document.querySelector('.toggle');
+	if (isHome) contactForm = document.querySelector('.contact-form');
+
+	button.setAttribute('aria-pressed', isDark ? false : true);
+	document.documentElement.dataset.theme = isDark ? 'dark' : 'light';
+	button.addEventListener('click', sync);
+	if (isDark) {
+		console.log('is dark and home');
+		contactForm.style.setProperty('--font-color', 'var(--background-color)');
+	}
 
 	const mainObserver = new IntersectionObserver(showToTop, {
 		root: null,
@@ -28,6 +32,8 @@ function init() {
 	});
 
 	mainObserver.observe(main);
+
+	contactForm.addEventListener('submit', submitContactForm);
 }
 
 const sync = () => {
@@ -50,6 +56,19 @@ function showToTop(entries) {
 
 	toTop.classList.add('visible');
 }
+
+function submitContactForm(ev) {
+	ev.preventDefault();
+	console.log('form submitted');
+}
+
+// Form validation
+// if empty / invalid, change --focus-visible in contact class to --red
+// check email with regex, must have @ and .
+// name >= 2 characters
+// message >= 10 characters and <= 300
+// show message describing errors underneath the inputs
+// if valid, change --focus-visible in contact class to --green
 
 document.addEventListener('DOMContentLoaded', () => {
 	init();
