@@ -23,6 +23,7 @@ html[data-theme='light'] {
 	--red: #650c00;
 	--green: #5ab80d;
 	--blue: #2441a9;
+	--gray: #888;
 	--button: #0d1d2a;
 	--button-color: var(--background-color);
 	--box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
@@ -36,6 +37,7 @@ html[data-theme='dark'] {
 	--red: #fe4b34;
 	--green: #c6eda6;
 	--blue: #7d99ff;
+	--gray: #bbb;
 	--button: var(--blue);
 	--button-color: var(--background-color);
 	--box-shadow: rgba(122, 122, 122, 0.1) 0px 1px 3px 0px,
@@ -340,13 +342,19 @@ textarea {
 	background-color: #fff;
 	padding: 0.25rem 0.75rem;
 	transition: var(--hover-transition);
-	border: 0.2rem solid var(--font-color);
+	border: 0.1rem solid var(--gray);
 	border-radius: 0.5rem;
 	margin-bottom: 1rem;
 
 	&:focus-visible {
 		outline-color: var(--focus-visible);
 	}
+}
+
+textarea {
+	resize: vertical;
+	min-height: 5rem;
+	max-height: 20rem;
 }
 
 input.error,
@@ -359,7 +367,7 @@ form .btn {
 	border-radius: 0.5rem;
 	color: var(--background-color);
 	background-color: var(--blue);
-	border: 0.2rem solid var(--blue);
+	border: 0.2rem solid var(--background-color);
 	margin-top: 1rem;
 
 	&:hover {
@@ -373,6 +381,12 @@ form .btn {
 
 	&:focus {
 		background-color: var(--blue);
+	}
+
+	&:disabled {
+		background-color: var(--gray);
+		border-color: var(--gray);
+		cursor: wait;
 	}
 }
 
