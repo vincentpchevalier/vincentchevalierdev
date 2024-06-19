@@ -207,7 +207,6 @@ textarea {
 	cursor: pointer;
 
 	&:hover,
-	&:focus,
 	&:focus-visible {
 		color: var(--background-color);
 		background-color: var(--font-color);
@@ -291,7 +290,6 @@ section {
 	flex-direction: column;
 }
 
-
 .intro-banner {
 	margin-bottom: var(--margin-small);
 }
@@ -299,7 +297,6 @@ section {
 .intro-banner img {
 	margin-bottom: var(--margin-small);
 }
-
 
 /* Skills */
 
@@ -318,7 +315,6 @@ section {
 }
 
 /* Form */
-
 
 .contact {
 	--focus-visible: var(--green);
@@ -373,6 +369,10 @@ form .btn {
 
 	&:focus-visible {
 		outline-color: var(--focus-visible);
+	}
+
+	&:focus {
+		background-color: var(--blue);
 	}
 }
 

@@ -2,6 +2,7 @@ let main;
 let toTop;
 let lightDarkButton;
 let contactForm;
+let inputs;
 
 function init() {
 	let isDark =
@@ -9,7 +10,7 @@ function init() {
 		matchMedia('(prefers-color-scheme: dark)').matches;
 	let isHome =
 		location.pathname.includes('index.html') || location.pathname === '/';
-  
+
 	main = isHome
 		? document.querySelector('#home #main')
 		: document.querySelector('#projects #main');
@@ -17,8 +18,12 @@ function init() {
 	toTop = document.querySelector('.to-top');
 	lightDarkButton = document.querySelector('.toggle');
 	if (isHome) {
+		inputs = document.querySelectorAll(
+			'.contact-form input, .contact-form textarea'
+		);
+		console.log(inputs);
 		contactForm = document.querySelector('.contact-form');
-		contactForm.querySelectorAll('input, textarea').forEach((input) => {
+		inputs.forEach((input) => {
 			input.addEventListener(
 				'invalid',
 				(ev) => {
@@ -72,15 +77,12 @@ function showToTop(entries) {
 function submitContactForm(ev) {
 	ev.preventDefault();
 	console.log('form submitted');
+	console.log(inputs);
+	inputs.forEach((input) => {
+		input.classList.remove('error');
+		input.value = '';
+	});
 }
-
-// Form validation
-// if empty / invalid, change --focus-visible in contact class to --red
-// check email with regex, must have @ and .
-// name >= 2 characters
-// message >= 10 characters and <= 300
-// show message describing errors underneath the inputs
-// if valid, change --focus-visible in contact class to --green
 
 document.addEventListener('DOMContentLoaded', () => {
 	init();
