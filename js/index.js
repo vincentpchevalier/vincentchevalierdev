@@ -1,5 +1,6 @@
 let main;
 let toTop;
+
 let lightDarkButton;
 let contactForm;
 let inputs;
@@ -38,6 +39,7 @@ function init() {
 	lightDarkButton.setAttribute('aria-pressed', isDark ? true : false);
 	document.documentElement.dataset.theme = isDark ? 'dark' : 'light';
 	lightDarkButton.addEventListener('click', sync);
+
 
 	if (isDark) {
 		console.log('is dark and home');
