@@ -291,7 +291,6 @@ section {
 	flex-direction: column;
 }
 
-
 .intro-banner {
 	margin-bottom: var(--margin-small);
 }
@@ -299,7 +298,6 @@ section {
 .intro-banner img {
 	margin-bottom: var(--margin-small);
 }
-
 
 /* Skills */
 
@@ -318,7 +316,6 @@ section {
 }
 
 /* Form */
-
 
 .contact {
 	--focus-visible: var(--green);
@@ -419,12 +416,15 @@ footer .container {
 	}
 
 	.intro-banner img {
-		max-width: 20rem;
+		width: 20rem;
 		margin: 0;
 	}
 
 	.intro-hello {
 		margin-left: var(--margin-small);
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
 	}
 
 	.intro-content {
