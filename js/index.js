@@ -9,6 +9,7 @@ function init() {
 		matchMedia('(prefers-color-scheme: dark)').matches;
 	let isHome =
 		location.pathname.includes('index.html') || location.pathname === '/';
+  
 	main = isHome
 		? document.querySelector('#home #main')
 		: document.querySelector('#projects #main');
