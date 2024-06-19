@@ -1,6 +1,6 @@
 let main;
 let toTop;
-let button;
+let lightDarkButton;
 let contactForm;
 
 function init() {
@@ -12,13 +12,25 @@ function init() {
 	main = isHome
 		? document.querySelector('#home #main')
 		: document.querySelector('#projects #main');
-	toTop = document.querySelector('.to-top');
-	button = document.querySelector('.toggle');
-	if (isHome) contactForm = document.querySelector('.contact-form');
 
-	button.setAttribute('aria-pressed', isDark ? false : true);
+	toTop = document.querySelector('.to-top');
+	lightDarkButton = document.querySelector('.toggle');
+	if (isHome) {
+		contactForm = document.querySelector('.contact-form');
+		contactForm.querySelectorAll('input, textarea').forEach((input) => {
+			input.addEventListener(
+				'invalid',
+				(ev) => {
+					input.classList.add('error');
+				},
+				false
+			);
+		});
+	}
+
+	lightDarkButton.setAttribute('aria-pressed', isDark ? false : true);
 	document.documentElement.dataset.theme = isDark ? 'dark' : 'light';
-	button.addEventListener('click', sync);
+	lightDarkButton.addEventListener('click', sync);
 	if (isDark) {
 		console.log('is dark and home');
 		contactForm.style.setProperty('--font-color', 'var(--background-color)');
@@ -36,13 +48,13 @@ function init() {
 }
 
 const sync = () => {
-	const darkNow = button.matches('[aria-pressed=false]');
+	const darkNow = lightDarkButton.matches('[aria-pressed=false]');
 	console.log(`was ${document.documentElement.dataset.theme}`);
 	document.documentElement.dataset.theme = darkNow ? 'light' : 'dark';
 	console.log(`now ${document.documentElement.dataset.theme}`);
 	console.log(`Now with ${darkNow ? 'Dark' : 'Light'} Mode.`);
-	button.setAttribute('aria-pressed', darkNow ? true : false);
-	button.textContent = darkNow ? 'DM' : 'LM';
+	lightDarkButton.setAttribute('aria-pressed', darkNow ? true : false);
+	lightDarkButton.textContent = darkNow ? 'DM' : 'LM';
 };
 
 function showToTop(entries) {

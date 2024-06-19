@@ -351,6 +351,12 @@ textarea {
 	}
 }
 
+input.error,
+textarea.error {
+	border-color: var(--red);
+	outline-color: var(--pink);
+}
+
 form .btn {
 	border-radius: 0.5rem;
 	color: var(--background-color);
@@ -417,12 +423,15 @@ footer .container {
 	}
 
 	.intro-banner img {
-		max-width: 20rem;
+		width: 20rem;
 		margin: 0;
 	}
 
 	.intro-hello {
 		margin-left: var(--margin-small);
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
 	}
 
 	.intro-content {
