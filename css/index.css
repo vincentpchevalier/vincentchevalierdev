@@ -367,12 +367,12 @@ form .btn {
 	border-radius: 0.5rem;
 	color: var(--background-color);
 	background-color: var(--blue);
-	border: 0.2rem solid var(--background-color);
+	border: 0.1rem solid var(--blue);
 	margin-top: 1rem;
 
 	&:hover {
 		background-color: var(--green);
-		border-color: var(--green);
+		border: 0.1rem solid var(--green);
 	}
 
 	&:focus-visible {
@@ -381,11 +381,12 @@ form .btn {
 
 	&:focus {
 		background-color: var(--blue);
+		border: 0.1rem solid var(--blue);
 	}
 
 	&:disabled {
 		background-color: var(--gray);
-		border-color: var(--gray);
+		border: 0.1rem solid var(--gray);
 		cursor: wait;
 	}
 }

@@ -40,7 +40,6 @@ function init() {
 	document.documentElement.dataset.theme = isDark ? 'dark' : 'light';
 	lightDarkButton.addEventListener('click', sync);
 
-
 	if (isDark) {
 		console.log('is dark and home');
 		contactForm.style.setProperty('--font-color', 'var(--background-color)');
