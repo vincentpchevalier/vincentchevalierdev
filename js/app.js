@@ -1,29 +1,29 @@
 const APP = {
 	mode: null,
 	isHome: null,
-	main: null,
-	toTop: document.querySelector('.to-top'),
+	footer: null,
+	toTop: null,
 	isHome: location.pathname.includes('index.html') || location.pathname === '/',
 
 	init() {
 		console.log('App initialized');
 
-		this.main = this.isHome
-			? document.querySelector('#home #main')
-			: document.querySelector('#projects #main');
+		this.footer = this.isHome
+			? document.querySelector('#home footer')
+			: document.querySelector('#projects footer');
+
+		this.toTop = document.querySelector('.to-top');
 
 		THEME.init();
 		this.mode = THEME.getMode();
 
 		this.observeThemeChange();
 
+		this.observeScrollDistance();
+
 		if (this.isHome) {
 			CONTACT.init(this.mode);
 		}
-
-		console.log(`is ${this.mode} mode`);
-		console.log('is home', this.isHome);
-		console.log('main', this.main);
 	},
 
 	observeThemeChange() {
@@ -45,6 +45,25 @@ const APP = {
 			attributes: true,
 			attributeFilter: ['data-theme'],
 		});
+	},
+
+	observeScrollDistance() {
+		const footerObserver = new IntersectionObserver(this.showToTop.bind(this), {
+			root: null,
+			rootMargin: '50px',
+			threshold: 0.1,
+		});
+
+		footerObserver.observe(this.footer);
+	},
+
+	showToTop(entries) {
+		const [entry] = entries;
+		if (!entry.isIntersecting) {
+			this.toTop.classList.remove('visible');
+			return;
+		}
+		this.toTop.classList.add('visible');
 	},
 };
 
@@ -85,8 +104,6 @@ const CONTACT = {
 	init(mode) {
 		this.contactForm = document.querySelector('.contact-form');
 		this.inputs = document.querySelectorAll('.contact-form input');
-		console.log(this.inputs);
-		console.log(`${mode} mode`);
 
 		this.inputs.forEach((input) => {
 			input.addEventListener(
@@ -276,16 +293,16 @@ const sync = () => {
 	}
 };
 
-function showToTop(entries) {
-	// console.log('to top function');
-	const [entry] = entries;
-	if (!entry.isIntersecting) {
-		toTop.classList.remove('visible');
-		return;
-	}
+// function showToTop(entries) {
+// 	// console.log('to top function');
+// 	const [entry] = entries;
+// 	if (!entry.isIntersecting) {
+// 		toTop.classList.remove('visible');
+// 		return;
+// 	}
 
-	toTop.classList.add('visible');
-}
+// 	toTop.classList.add('visible');
+// }
 
 function isValidEmail(email) {
 	if (email === '' || email.length > 320) return false;
