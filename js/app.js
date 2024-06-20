@@ -1,36 +1,57 @@
 const APP = {
-	isDark: null,
+	mode: null,
 	isHome: null,
 	main: null,
 	toTop: document.querySelector('.to-top'),
-	lightDarkButton: document.querySelector('.toggle'),
-
-	// contactForm: null,
-	// inputs: null,
+	isHome: location.pathname.includes('index.html') || location.pathname === '/',
 
 	init() {
 		console.log('App initialized');
-		isDark = document.documentElement.dataset.theme === 'dark';
-		isHome =
-			location.pathname.includes('index.html') || location.pathname === '/';
-		main = isHome
+
+		this.main = this.isHome
 			? document.querySelector('#home #main')
 			: document.querySelector('#projects #main');
-		// contactForm = isHome ? document.querySelector('.contact-form') : null;
-		// inputs = isHome ? document.querySelectorAll('.contact-form input') : null;
 
-		if (isHome) {
-			CONTACT.init(isDark);
+		THEME.init();
+
+		this.mode = THEME.getMode();
+
+		if (this.isHome) {
+			CONTACT.init(this.mode);
 		}
 
-		console.log('is dark', isDark);
-		console.log('is home', isHome);
-		console.log('main', main);
+		console.log(`is ${this.mode} mode`);
+		console.log('is home', this.isHome);
+		console.log('main', this.main);
 	},
 };
 
 const THEME = {
-	init() {},
+	mode: null,
+	themeButton: null,
+	init() {
+		this.themeButton = document.querySelector('.toggle');
+		this.mode =
+			document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+
+		this.themeButton.addEventListener('click', this.toggleMode.bind(this));
+
+		this.themeButton.setAttribute('aria-pressed', this.mode === 'dark');
+		this.themeButton.textContent = this.mode === 'dark' ? 'DM' : 'LM';
+	},
+
+	getMode() {
+		return this.mode;
+	},
+
+	toggleMode() {
+		const darkNow = this.mode === 'light';
+		this.mode = darkNow ? 'dark' : 'light';
+		document.documentElement.dataset.theme = this.mode;
+		console.log(`Now with ${this.mode} Mode.`);
+		this.themeButton.setAttribute('aria-pressed', darkNow);
+		this.themeButton.textContent = this.mode === 'dark' ? 'DM' : 'LM';
+	},
 };
 
 const CONTACT = {
@@ -38,11 +59,11 @@ const CONTACT = {
 	contactForm: null,
 	inputs: null,
 
-	init(darkMode) {
+	init(mode) {
 		this.contactForm = document.querySelector('.contact-form');
 		this.inputs = document.querySelectorAll('.contact-form input');
 		console.log(this.inputs);
-		console.log(darkMode ? 'dark mode' : 'light mode');
+		console.log(`${mode} mode`);
 
 		this.inputs.forEach((input) => {
 			input.addEventListener(
@@ -59,14 +80,14 @@ const CONTACT = {
 			this.submitContactForm.bind(this)
 		);
 
-		if (darkMode) {
+		if (mode === 'dark') {
 			this.contactForm.style.setProperty(
 				'--font-color',
 				'var(--background-color)'
 			);
 		}
 
-		if (!darkMode) {
+		if (mode === 'light') {
 			this.contactForm.style.setProperty('--font-color', 'var(--font-color)');
 		}
 	},
