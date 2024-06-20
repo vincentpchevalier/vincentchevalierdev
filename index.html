@@ -14,7 +14,7 @@
 
 		<link rel="stylesheet" href="./css/index.css" />
 
-		<script src="./js/index.js"></script>
+		<script src="./js/app.js" type="module"></script>
 	</head>
 	<body id="home">
 		<ul class="skip-links" role="menu">
@@ -23,6 +23,11 @@
 		</ul>
 		<header>
 			<div class="container">
+				<img
+					src="./images/headshot.jpg"
+					alt="Vincent Chevalier"
+					class="headshot"
+				/>
 				<nav class="navigation" id="nav">
 					<ul role="menu">
 						<li><a href="./index.html">Home</a></li>
@@ -37,7 +42,11 @@
 			<div class="container">
 				<section class="intro">
 					<div class="intro-banner">
-						<img src="./images/vincent-chevalier.jpg" alt="Vincent Chevalier" />
+						<img
+							src="./images/headshot.jpg"
+							alt="Vincent Chevalier"
+							class="headshot"
+						/>
 						<div class="intro-hello">
 							<h2 class="greetings">Hello there 👋</h2>
 							<h1 class="greetings">My name's Vincent!</h1>
@@ -117,8 +126,13 @@
 						<label for="email">Email</label>
 						<input type="email" id="email" name="email" required />
 						<label for="message">Message</label>
-						<textarea id="message" name="message" required></textarea>
-						<button type="submit" class="btn">Submit</button>
+						<textarea
+							id="message"
+							name="message"
+							maxlength="300"
+							required
+						></textarea>
+						<button type="submit" class="btn">Send</button>
 					</form>
 				</section>
 			</div>

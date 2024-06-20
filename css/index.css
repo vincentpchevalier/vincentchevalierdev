@@ -23,6 +23,7 @@ html[data-theme='light'] {
 	--red: #650c00;
 	--green: #5ab80d;
 	--blue: #2441a9;
+	--gray: #888;
 	--button: #0d1d2a;
 	--button-color: var(--background-color);
 	--box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
@@ -36,6 +37,7 @@ html[data-theme='dark'] {
 	--red: #fe4b34;
 	--green: #c6eda6;
 	--blue: #7d99ff;
+	--gray: #bbb;
 	--button: var(--blue);
 	--button-color: var(--background-color);
 	--box-shadow: rgba(122, 122, 122, 0.1) 0px 1px 3px 0px,
@@ -178,21 +180,26 @@ label {
 }
 
 .intro-hello h1 {
-	font-size: clamp(2rem, 2vw, 3.6rem);
+	font-size: clamp(2.4rem, 2vw, 4rem);
 	margin: 0;
 }
 
 h2 {
-	font-size: clamp(1.8rem, 2vw, 2.4rem);
+	font-size: clamp(2.2rem, 2vw, 3rem);
+}
+
+a {
+	font-size: clamp(1.4rem, 2vw, 2rem);
+	line-height: 1.8;
+	margin-bottom: 0;
 }
 
 p,
-a,
 button,
 label,
 input,
 textarea {
-	font-size: clamp(1.4rem, 2vw, 2rem);
+	font-size: clamp(1.2rem, 2vw, 2rem);
 	line-height: 1.8;
 	margin-bottom: 0;
 }
@@ -207,7 +214,6 @@ textarea {
 	cursor: pointer;
 
 	&:hover,
-	&:focus,
 	&:focus-visible {
 		color: var(--background-color);
 		background-color: var(--font-color);
@@ -236,15 +242,11 @@ section {
 
 /* Header Navigation */
 
-.navigation {
-	/*  */
-}
-
 .navigation ul {
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: center;
-	gap: 4rem;
+	gap: 2rem;
 	margin: 0 0 2rem;
 }
 
@@ -284,13 +286,22 @@ section {
 	}
 }
 
+/* Headshot */
+
+header .headshot {
+	display: none;
+}
+
+main .headshot {
+	border-radius: 1rem;
+}
+
 /* Main - Intro */
 
 .intro {
 	display: flex;
 	flex-direction: column;
 }
-
 
 .intro-banner {
 	margin-bottom: var(--margin-small);
@@ -299,7 +310,6 @@ section {
 .intro-banner img {
 	margin-bottom: var(--margin-small);
 }
-
 
 /* Skills */
 
@@ -318,7 +328,6 @@ section {
 }
 
 /* Form */
-
 
 .contact {
 	--focus-visible: var(--green);
@@ -344,7 +353,7 @@ textarea {
 	background-color: #fff;
 	padding: 0.25rem 0.75rem;
 	transition: var(--hover-transition);
-	border: 0.2rem solid var(--font-color);
+	border: 0.1rem solid var(--gray);
 	border-radius: 0.5rem;
 	margin-bottom: 1rem;
 
@@ -353,20 +362,43 @@ textarea {
 	}
 }
 
+textarea {
+	resize: vertical;
+	min-height: 5rem;
+	max-height: 20rem;
+}
+
+input.error,
+textarea.error {
+	border-color: var(--red);
+	outline-color: var(--pink);
+}
+
 form .btn {
 	border-radius: 0.5rem;
 	color: var(--background-color);
 	background-color: var(--blue);
-	border: 0.2rem solid var(--blue);
+	border: 0.1rem solid var(--blue);
 	margin-top: 1rem;
 
 	&:hover {
 		background-color: var(--green);
-		border-color: var(--green);
+		border: 0.1rem solid var(--green);
 	}
 
 	&:focus-visible {
 		outline-color: var(--focus-visible);
+	}
+
+	&:focus {
+		background-color: var(--blue);
+		border: 0.1rem solid var(--blue);
+	}
+
+	&:disabled {
+		background-color: var(--gray);
+		border: 0.1rem solid var(--gray);
+		cursor: wait;
 	}
 }
 
@@ -397,10 +429,32 @@ footer .container {
 	}
 
 	/* Header - Tablet */
+
+	header {
+		margin-bottom: var(--margin-large);
+	}
+
+	header .container {
+		display: flex;
+		justify-content: space-between;
+	}
+
 	.navigation ul {
 		justify-content: end;
 		flex-wrap: wrap;
 		gap: 2rem;
+	}
+
+	header .headshot {
+		display: block;
+		align-self: center;
+		max-width: 6rem;
+		border-radius: 50%;
+		margin: 2rem 0;
+	}
+
+	main .headshot {
+		display: none;
 	}
 
 	/* Main - Tablet */
@@ -419,16 +473,18 @@ footer .container {
 	}
 
 	.intro-banner img {
-		max-width: 20rem;
+		width: 20rem;
 		margin: 0;
 	}
 
 	.intro-hello {
-		margin-left: var(--margin-small);
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: 2rem;
 	}
 
-	.intro-content {
-		flex-shrink: 1;
+	.intro-hello h2 {
+		margin: 0;
 	}
 
 	input,
@@ -455,9 +511,24 @@ footer .container {
 		--margin-large: 4rem;
 	}
 
+	header .headshot {
+		align-self: center;
+		max-width: 8rem;
+		border-radius: 50%;
+		margin: 1.5rem 0 2rem;
+	}
+
 	/* Main - Desktop */
 	.intro-banner {
 		margin-bottom: var(--margin-small);
+	}
+
+	.intro-hello {
+		align-items: baseline;
+	}
+
+	.intro-hello h2 {
+		font-size: clamp(2.4rem, 2vw, 4rem);
 	}
 
 	.intro-banner img {
