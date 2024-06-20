@@ -39,6 +39,8 @@ const APP = {
 				) {
 					newMode = mutation.target.dataset.theme;
 					console.log(`Mode changed to ${newMode}`);
+					localStorage.setItem('mode', newMode);
+					console.log(`Mode stored as ${newMode} in localStorage.`);
 					if (this.isHome) CONTACT.updateFormStyle(newMode);
 				}
 			});
