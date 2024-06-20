@@ -180,21 +180,26 @@ label {
 }
 
 .intro-hello h1 {
-	font-size: clamp(2rem, 2vw, 3.6rem);
+	font-size: clamp(2.4rem, 2vw, 4rem);
 	margin: 0;
 }
 
 h2 {
-	font-size: clamp(1.8rem, 2vw, 2.4rem);
+	font-size: clamp(2.2rem, 2vw, 3rem);
+}
+
+a {
+	font-size: clamp(1.4rem, 2vw, 2rem);
+	line-height: 1.8;
+	margin-bottom: 0;
 }
 
 p,
-a,
 button,
 label,
 input,
 textarea {
-	font-size: clamp(1.4rem, 2vw, 2rem);
+	font-size: clamp(1.2rem, 2vw, 2rem);
 	line-height: 1.8;
 	margin-bottom: 0;
 }
@@ -237,15 +242,11 @@ section {
 
 /* Header Navigation */
 
-.navigation {
-	/*  */
-}
-
 .navigation ul {
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: center;
-	gap: 4rem;
+	gap: 2rem;
 	margin: 0 0 2rem;
 }
 
@@ -283,6 +284,16 @@ section {
 		background-color: var(--font-color);
 		border: 0.2rem solid var(--font-color);
 	}
+}
+
+/* Headshot */
+
+header .headshot {
+	display: none;
+}
+
+main .headshot {
+	border-radius: 1rem;
 }
 
 /* Main - Intro */
@@ -418,10 +429,32 @@ footer .container {
 	}
 
 	/* Header - Tablet */
+
+	header {
+		margin-bottom: var(--margin-large);
+	}
+
+	header .container {
+		display: flex;
+		justify-content: space-between;
+	}
+
 	.navigation ul {
 		justify-content: end;
 		flex-wrap: wrap;
 		gap: 2rem;
+	}
+
+	header .headshot {
+		display: block;
+		align-self: center;
+		max-width: 6rem;
+		border-radius: 50%;
+		margin: 2rem 0;
+	}
+
+	main .headshot {
+		display: none;
 	}
 
 	/* Main - Tablet */
@@ -445,14 +478,13 @@ footer .container {
 	}
 
 	.intro-hello {
-		margin-left: var(--margin-small);
 		display: flex;
 		flex-wrap: wrap;
-		gap: 1rem;
+		column-gap: 2rem;
 	}
 
-	.intro-content {
-		flex-shrink: 1;
+	.intro-hello h2 {
+		margin: 0;
 	}
 
 	input,
@@ -479,9 +511,24 @@ footer .container {
 		--margin-large: 4rem;
 	}
 
+	header .headshot {
+		align-self: center;
+		max-width: 8rem;
+		border-radius: 50%;
+		margin: 1.5rem 0 2rem;
+	}
+
 	/* Main - Desktop */
 	.intro-banner {
 		margin-bottom: var(--margin-small);
+	}
+
+	.intro-hello {
+		align-items: baseline;
+	}
+
+	.intro-hello h2 {
+		font-size: clamp(2.4rem, 2vw, 4rem);
 	}
 
 	.intro-banner img {
