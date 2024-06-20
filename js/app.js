@@ -13,8 +13,9 @@ const APP = {
 			: document.querySelector('#projects #main');
 
 		THEME.init();
-
 		this.mode = THEME.getMode();
+
+		this.observeThemeChange();
 
 		if (this.isHome) {
 			CONTACT.init(this.mode);
@@ -24,11 +25,33 @@ const APP = {
 		console.log('is home', this.isHome);
 		console.log('main', this.main);
 	},
+
+	observeThemeChange() {
+		let newMode;
+		const observer = new MutationObserver((mutations) => {
+			mutations.forEach((mutation) => {
+				if (
+					mutation.type === 'attributes' &&
+					mutation.attributeName === 'data-theme'
+				) {
+					newMode = mutation.target.dataset.theme;
+					console.log(`Mode changed to ${newMode}`);
+					if (this.isHome) CONTACT.updateFormStyle(newMode);
+				}
+			});
+		});
+
+		observer.observe(document.documentElement, {
+			attributes: true,
+			attributeFilter: ['data-theme'],
+		});
+	},
 };
 
 const THEME = {
 	mode: null,
 	themeButton: null,
+
 	init() {
 		this.themeButton = document.querySelector('.toggle');
 		this.mode =
@@ -80,14 +103,16 @@ const CONTACT = {
 			this.submitContactForm.bind(this)
 		);
 
+		this.updateFormStyle(mode);
+	},
+
+	updateFormStyle(mode) {
 		if (mode === 'dark') {
 			this.contactForm.style.setProperty(
 				'--font-color',
 				'var(--background-color)'
 			);
-		}
-
-		if (mode === 'light') {
+		} else {
 			this.contactForm.style.setProperty('--font-color', 'var(--font-color)');
 		}
 	},
