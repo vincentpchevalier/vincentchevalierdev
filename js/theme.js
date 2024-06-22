@@ -5,8 +5,6 @@ const THEME = {
 	init() {
 		const storedMode = localStorage.getItem('mode');
 		this.themeButton = document.querySelector('.toggle');
-		// this.mode =
-		// 	document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
 
 		if (storedMode) {
 			this.mode = storedMode;
@@ -19,7 +17,12 @@ const THEME = {
 		this.themeButton.addEventListener('click', this.toggleMode.bind(this));
 
 		this.themeButton.setAttribute('aria-pressed', this.mode === 'dark');
-		this.themeButton.textContent = this.mode === 'dark' ? 'LM' : 'DM';
+		this.themeButton.setAttribute(
+			'aria-label',
+			`${
+				this.mode.slice(0, 1).toUpperCase() + this.mode.slice(1).toLowerCase()
+			} Mode`
+		);
 	},
 
 	getMode() {
@@ -33,8 +36,12 @@ const THEME = {
 		console.log(`Now with ${this.mode} Mode.`);
 
 		localStorage.setItem('mode', this.mode);
+
 		this.themeButton.setAttribute('aria-pressed', darkNow);
-		this.themeButton.textContent = this.mode === 'dark' ? 'LM' : 'DM';
+		this.themeButton.setAttribute(
+			'aria-label',
+			`${this.mode.toUpperCase()} Mode`
+		);
 	},
 };
 
