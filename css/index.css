@@ -341,6 +341,7 @@ footer .container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 }
 
 .site-info {
@@ -348,6 +349,11 @@ footer .container {
 	font-weight: 600;
 	font-family: var(--header-font);
 	font-size: clamp(1.2rem, 2vw, 1.6rem);
+	transition: var(--hover-transition);
+}
+
+.site-info.version {
+	font-size: clamp(0.8rem, 2vw, 1rem);
 }
 
 /* Headshot */

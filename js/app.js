@@ -8,11 +8,14 @@ const APP = {
 	footer: null,
 	toTop: null,
 	isHome: location.pathname.includes('index.html') || location.pathname === '/',
+	version: 'v1.0',
 
 	init() {
 		this.footer = this.isHome
 			? document.querySelector('#home footer')
 			: document.querySelector('#projects footer');
+
+		this.footer.querySelector('.version').textContent = this.version;
 
 		this.toTop = document.querySelector('.to-top');
 
