@@ -698,7 +698,7 @@ form .btn {
 	border-radius: 0.2rem;
 	visibility: hidden;
 	opacity: 0;
-	transition: visibility 0s, opacity 0.5s linear;
+	transition: visibility 200ms, opacity 200ms linear;
 	z-index: 1;
 	text-align: center;
 
