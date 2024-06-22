@@ -313,6 +313,11 @@ section {
 	&:focus-visible {
 		background-color: transparent !important;
 	}
+
+	&:focus-visible {
+		outline: 0.3rem solid var(--pink);
+		outline-offset: 0.75rem;
+	}
 }
 
 .btn.toggle svg {
