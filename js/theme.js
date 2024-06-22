@@ -17,6 +17,7 @@ const THEME = {
 		this.themeButton.addEventListener('click', this.toggleMode.bind(this));
 
 		this.themeButton.setAttribute('aria-pressed', this.mode === 'dark');
+
 		this.themeButton.setAttribute(
 			'aria-label',
 			`${
@@ -42,6 +43,7 @@ const THEME = {
 			'aria-label',
 			`${this.mode.toUpperCase()} Mode`
 		);
+
 	},
 };
 
