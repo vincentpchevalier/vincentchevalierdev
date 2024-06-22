@@ -462,7 +462,7 @@ form .btn {
 	}
 
 	&:focus-visible {
-		outline-color: var(--focus-visible);
+		outline: 0.3rem solid var(--focus-visible);
 	}
 
 	&:focus {
