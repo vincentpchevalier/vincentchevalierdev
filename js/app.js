@@ -1,5 +1,6 @@
 import CONTACT from './contact.js';
 import THEME from './theme.js';
+import TOAST from './toast.js';
 
 const APP = {
 	mode: null,
@@ -18,6 +19,8 @@ const APP = {
 		this.toTop = document.querySelector('.to-top');
 
 		THEME.init();
+		TOAST.init();
+
 		this.mode = THEME.getMode();
 
 		this.observeThemeChange();
