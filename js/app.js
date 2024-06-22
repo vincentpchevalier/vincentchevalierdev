@@ -11,6 +11,10 @@ const APP = {
 	version: 'v1.0',
 
 	init() {
+		const hash = window.location.hash.replace(/^#/, '');
+		const el = document.getElementById(hash);
+		this.focusOnElement(el);
+
 		this.footer = this.isHome
 			? document.querySelector('#home footer')
 			: document.querySelector('#projects footer');
@@ -62,6 +66,30 @@ const APP = {
 		});
 
 		footerObserver.observe(this.footer);
+	},
+
+	isFocusable(el) {
+		const focusableEls =
+			'a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]),  button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+		const isFocusable = el.matches(focusableEls) && !el.matches(':hidden');
+
+		return isFocusable;
+	},
+
+	focusOnElement(el) {
+		// extra logic to focus on element if it is not focusable for Safari
+		if (!el) return;
+		if (!this.isFocusable(el)) {
+			el.setAttribute('tabindex', '-1');
+			el.addEventListener(
+				'blur',
+				() => {
+					el.removeAttribute('tabindex');
+				},
+				{ once: true }
+			);
+		}
+		el.focus();
 	},
 
 	showToTop(entries) {
