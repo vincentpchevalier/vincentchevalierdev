@@ -14,7 +14,7 @@
 
 		<link rel="stylesheet" href="./css/index.css" />
 
-		<script src="./js/app.js"></script>
+		<script src="./js/app.js" type="module"></script>
 	</head>
 	<body id="projects">
 		<ul class="skip-links" role="menu">
@@ -22,67 +22,117 @@
 			<li><a href="#main">Skip to main content</a></li>
 		</ul>
 		<header>
-			<nav class="navigation" id="nav">
-				<ul role="menu">
-					<li><a href="./index.html">Home</a></li>
-					<li><a href="./projects.html">Projects</a></li>
-					<li><button class="toggle">Dark Mode</button></li>
-				</ul>
-			</nav>
+			<div class="container">
+				<img
+					src="./images/headshot.jpg"
+					alt="Vincent Chevalier"
+					class="headshot"
+				/>
+				<nav class="navigation" id="nav">
+					<ul role="menu">
+						<li><a href="./index.html">Home</a></li>
+						<li><a href="./projects.html">Projects</a></li>
+						<li>
+							<button
+								class="btn toggle"
+								aria-pressed="false"
+								aria-label="Toggle dark mode"
+							>
+								<svg class="mode-icon" version="1.1" viewBox="0 0 1200 1200">
+									<path
+										d="m62.5 600c0-296.85 240.65-537.5 537.5-537.5 296.86 0 537.5 240.65 537.5 537.5 0 296.86-240.64 537.5-537.5 537.5-296.85 0-537.5-240.64-537.5-537.5zm500-300c0-46.633 39.113-91.234 92.645-83.598 187.91 26.793 332.36 188.3 332.36 383.6s-144.45 356.8-332.36 383.6c-53.531 7.6289-92.645-36.965-92.645-83.602z"
+										fill-rule="evenodd"
+									/>
+								</svg>
+							</button>
+						</li>
+					</ul>
+				</nav>
+			</div>
 		</header>
 
 		<main id="main">
-			<section class="project-descriptions">
-				<div class="container">
-					<h2>Project Descriptions</h2>
-					<ul class="project-list">
-						<li id="projectA">
-							<h3>Project 1</h3>
-							<img
-								src="./images/pexels-pixabay-163064.jpg"
-								alt="Play pieces on a game board"
-							/>
-							<p>
+			<div class="container">
+				<section class="projects-section">
+					<h1>
+						Projects
+						<span class="visually-hidden">Vincent Chevalier</span>
+					</h1>
+					<ul class="projects-list">
+						<li class="project" id="projectA">
+							<div class="project-header">
+								<h2>Example Project One</h2>
+								<img
+									src="./images/pexels-pixabay-163064.jpg"
+									alt="Play pieces on a game board"
+								/>
+							</div>
+							<p class="project-description">
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
 								enim ad minim veniam, quis nostrud exercitation ullamco laboris
 								nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
 								in.
 							</p>
+							<ul class="skills-list">
+								<li class="skill">React</li>
+								<li class="skill">Node.js</li>
+								<li class="skill">Express</li>
+								<li class="skill">MongoDB</li>
+								<li class="skill">Github</li>
+							</ul>
 						</li>
 
-						<li id="projectB">
-							<h3>Project 1</h3>
-							<img
-								src="./images/pexels-goumbik-296085.jpg"
-								alt="Laptop on a stump in the forest"
-							/>
-							<p>
+						<li class="project" id="projectB">
+							<div class="project-header">
+								<h2>Example Project Two</h2>
+								<img
+									src="./images/pexels-goumbik-296085.jpg"
+									alt="Laptop on a stump in the forest"
+								/>
+							</div>
+							<p class="project-description">
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
 								enim ad minim veniam, quis nostrud exercitation ullamco laboris
 								nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
 								in.
 							</p>
+							<ul class="skills-list">
+								<li class="skill">Flutter/dart</li>
+								<li class="skill">Design</li>
+								<li class="skill">Project Management</li>
+								<li class="skill">Firebase</li>
+								<li class="skill">Azure DevOps</li>
+							</ul>
 						</li>
 
-						<li id="projectC">
-							<h3>Project 1</h3>
-							<img
-								src="./images/pexels-clark-cruz-1064141-2911364.jpg"
-								alt="Ferris wheel at night"
-							/>
-							<p>
+						<li class="project" id="projectC">
+							<div class="project-header">
+								<h2>Example Project Three</h2>
+								<img
+									src="./images/pexels-clark-cruz-1064141-2911364.jpg"
+									alt="Ferris wheel at night"
+								/>
+							</div>
+							<p class="project-description">
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
 								enim ad minim veniam, quis nostrud exercitation ullamco laboris
 								nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
 								in.
 							</p>
+							<ul class="skills-list">
+								<li class="skill">Flutter/dart</li>
+								<li class="skill">Design</li>
+								<li class="skill">Project Management</li>
+								<li class="skill">Firebase</li>
+								<li class="skill">Azure DevOps</li>
+							</ul>
 						</li>
 					</ul>
-				</div>
-			</section>
+				</section>
+			</div>
 		</main>
 
 		<footer>
@@ -93,14 +143,15 @@
 				<a href="/" class="site-info"
 					><small>Open Source / MIT License</small></a
 				>
-				<a
-					class="to-top"
-					href="#main"
-					aria-label="Click to scroll to top of main content"
-					>To top</a
-				>
 			</div>
+			<a
+				class="to-top"
+				href="#main"
+				aria-label="Click to scroll to top of main content"
+				>To top</a
+			>
 		</footer>
+
 		<div class="click-to-close"></div>
 	</body>
 </html>
