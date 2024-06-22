@@ -22,29 +22,85 @@
 			<li><a href="#main">Skip to main content</a></li>
 		</ul>
 		<header>
-			<nav class="navigation" id="nav">
-				<ul role="menu">
-					<li><a href="./index.html">Home</a></li>
-					<li><a href="./projects.html">Projects</a></li>
-					<li><button class="toggle">Dark Mode</button></li>
-				</ul>
-			</nav>
+			<div class="container">
+				<img
+					src="./images/headshot.jpg"
+					alt="Vincent Chevalier"
+					class="headshot"
+				/>
+				<nav class="navigation" id="nav">
+					<ul role="menu">
+						<li><a href="./index.html">Home</a></li>
+						<li><a href="./projects.html">Projects</a></li>
+						<li>
+							<button
+								class="btn toggle"
+								aria-pressed="false"
+								aria-label="Toggle dark mode"
+							>
+								<svg class="mode-icon" version="1.1" viewBox="0 0 1200 1200">
+									<path
+										d="m62.5 600c0-296.85 240.65-537.5 537.5-537.5 296.86 0 537.5 240.65 537.5 537.5 0 296.86-240.64 537.5-537.5 537.5-296.85 0-537.5-240.64-537.5-537.5zm500-300c0-46.633 39.113-91.234 92.645-83.598 187.91 26.793 332.36 188.3 332.36 383.6s-144.45 356.8-332.36 383.6c-53.531 7.6289-92.645-36.965-92.645-83.602z"
+										fill-rule="evenodd"
+									/>
+								</svg>
+							</button>
+						</li>
+					</ul>
+				</nav>
+			</div>
 		</header>
+
+		<main>
+			<section>
+				<h1 class="visually-hidden">Vincent Chevalier</h1>
+			</section>
+		</main>
 
 		<footer>
 			<div class="container">
-				<a href="/">
+				<a
+					href="https://github.com/vincentpchevalier/vincentchevalierdev"
+					class="site-info"
+				>
 					<small>&copy; Vincent Chevalier 2024</small>
 				</a>
-				<a href="/"><small>Open Source / MIT License</small></a>
-				<a
-					class="to-top visible"
-					href="#main"
-					aria-label="Click to scroll to top of main content"
-					>To top</a
+				<a href="https://opensource.org/osd" class="site-info"
+					><small>Open Source / MIT License</small></a
 				>
 			</div>
+			<a
+				class="to-top"
+				href="#main"
+				aria-label="Click to scroll to top of main content"
+				>To top</a
+			>
 		</footer>
-		<div class="click-to-close"></div>
+		<div
+			id="toast"
+			class="show"
+			role="alert"
+			aria-live="polite"
+			aria-atomic="true"
+		>
+			<p class="toast-message">Toaster message</p>
+			<!-- <p class="toast-message toast-message-long">
+				Toaster message various lengths how long could it go for testing
+			</p> -->
+
+			<button class="btn toast-button" aria-label="Close toast message">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 25 25"
+					overflow="visible"
+					stroke-width="5"
+					stroke-linecap="round"
+					class="toast-close-icon"
+				>
+					<line x2="25" y2="25" />
+					<line x1="25" y2="25" />
+				</svg>
+			</button>
+		</div>
 	</body>
 </html>

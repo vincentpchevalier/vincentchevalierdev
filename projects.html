@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -137,10 +137,13 @@
 
 		<footer>
 			<div class="container">
-				<a href="/" class="site-info">
+				<a
+					href="https://github.com/vincentpchevalier/vincentchevalierdev"
+					class="site-info"
+				>
 					<small>&copy; Vincent Chevalier 2024</small>
 				</a>
-				<a href="/" class="site-info"
+				<a href="https://opensource.org/osd" class="site-info"
 					><small>Open Source / MIT License</small></a
 				>
 			</div>
@@ -151,7 +154,22 @@
 				>To top</a
 			>
 		</footer>
+		<div id="toast" role="alert" aria-live="polite" aria-atomic="true">
+			<p class="toast-message"></p>
 
-		<div class="click-to-close"></div>
+			<button class="btn toast-button" aria-label="Close toast message">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 25 25"
+					overflow="visible"
+					stroke-width="5"
+					stroke-linecap="round"
+					class="toast-close-icon"
+				>
+					<line x2="25" y2="25" />
+					<line x1="25" y2="25" />
+				</svg>
+			</button>
+		</div>
 	</body>
 </html>

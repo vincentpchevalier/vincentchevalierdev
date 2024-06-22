@@ -1,5 +1,6 @@
 import CONTACT from './contact.js';
 import THEME from './theme.js';
+import TOAST from './toast.js';
 
 const APP = {
 	mode: null,
@@ -9,8 +10,6 @@ const APP = {
 	isHome: location.pathname.includes('index.html') || location.pathname === '/',
 
 	init() {
-		console.log('App initialized');
-
 		this.footer = this.isHome
 			? document.querySelector('#home footer')
 			: document.querySelector('#projects footer');
@@ -18,6 +17,8 @@ const APP = {
 		this.toTop = document.querySelector('.to-top');
 
 		THEME.init();
+		TOAST.init();
+
 		this.mode = THEME.getMode();
 
 		this.observeThemeChange();
@@ -38,9 +39,7 @@ const APP = {
 					mutation.attributeName === 'data-theme'
 				) {
 					newMode = mutation.target.dataset.theme;
-					console.log(`Mode changed to ${newMode}`);
 					localStorage.setItem('mode', newMode);
-					console.log(`Mode stored as ${newMode} in localStorage.`);
 					if (this.isHome) CONTACT.updateFormStyle(newMode);
 				}
 			});
