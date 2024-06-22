@@ -32,18 +32,19 @@ const THEME = {
 
 	toggleMode() {
 		const darkNow = this.mode === 'light';
+
 		this.mode = darkNow ? 'dark' : 'light';
+
 		document.documentElement.dataset.theme = this.mode;
-		console.log(`Now with ${this.mode} Mode.`);
 
 		localStorage.setItem('mode', this.mode);
 
 		this.themeButton.setAttribute('aria-pressed', darkNow);
+
 		this.themeButton.setAttribute(
 			'aria-label',
 			`${this.mode.toUpperCase()} Mode`
 		);
-
 	},
 };
 
