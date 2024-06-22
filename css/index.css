@@ -193,6 +193,10 @@ h2 {
 	font-size: clamp(2.2rem, 2vw, 3rem);
 }
 
+#projects h2 {
+	font-size: clamp(1.6rem, 2vw, 2rem);
+}
+
 a {
 	font-size: clamp(1.4rem, 2vw, 2rem);
 	line-height: 1.8;
@@ -207,6 +211,10 @@ textarea {
 	font-size: clamp(1.2rem, 2vw, 2rem);
 	line-height: 1.8;
 	margin-bottom: 0;
+}
+
+#projects p {
+	font-size: clamp(1.2rem, 2vw, 1.8rem);
 }
 
 .btn {
@@ -355,6 +363,16 @@ main .headshot {
 	font-family: var(--header-font);
 	padding: 0.25rem 1rem;
 	border-radius: 0.25rem;
+	transition: var(--hover-transition);
+
+	&:hover {
+		background-color: var(--green);
+		cursor: default;
+	}
+}
+
+#projects .skill {
+	font-size: clamp(1rem, 2vw, 1.4rem);
 }
 
 /* Home - Intro */
@@ -445,6 +463,28 @@ form .btn {
 		border: 0.1rem solid var(--gray);
 		cursor: wait;
 	}
+}
+
+/* Projects - Projects List */
+
+#projects {
+	--margin-small: 1rem;
+}
+
+.projects-section h1 {
+	margin-bottom: var(--margin-small);
+}
+
+.project {
+	margin-bottom: var(--margin-large);
+}
+
+.project-header {
+	margin-bottom: var(--margin-small);
+}
+
+.project-description {
+	margin-bottom: var(--margin-small);
 }
 
 /* Queries */
