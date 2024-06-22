@@ -449,9 +449,8 @@ form .btn {
 
 /* Queries */
 
+/* Tablet */
 @media only screen and (min-width: 45rem) {
-	/* Tablet */
-
 	.container {
 		--padding-default: 4rem;
 	}
@@ -534,9 +533,8 @@ form .btn {
 	}
 }
 
+/* Desktop */
 @media only screen and (min-width: 65rem) {
-	/* Desktop */
-
 	.container {
 		--content-width: 65rem;
 		--margin-small: 3rem;
