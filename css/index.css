@@ -5,7 +5,8 @@
 	--header-font: 'JetBrains Mono', monospace;
 	--body-font: 'Inter', sans-serif;
 
-	--hover-transition: background-color 200ms, border 200ms, color 200ms;
+	--hover-transition: background-color 200ms, border 200ms, color 200ms,
+		fill 200ms;
 
 	--padding-default: 2rem;
 	--margin-small: 2rem;
@@ -44,9 +45,9 @@ html[data-theme='dark'] {
 		rgba(122, 122, 122, 0.06) 0px 1px 2px 0px;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
 	:root {
-		color-scheme: only light;
+		color-scheme: only dark;
 	}
 }
 
@@ -138,6 +139,10 @@ svg {
 	fill: currentColor;
 }
 
+.mode-icon {
+	width: 2rem;
+}
+
 svg:not(:root) {
 	overflow: hidden;
 }
@@ -210,14 +215,14 @@ textarea {
 	padding: 0.25rem 0.75rem;
 	font-weight: 600;
 	transition: var(--hover-transition);
-	border: 0.2rem solid var(--font-color);
+	/* border: 0.2rem solid var(--font-color); */
 	cursor: pointer;
 
 	&:hover,
 	&:focus-visible {
 		color: var(--background-color);
 		background-color: var(--font-color);
-		border: 0.2rem solid var(--font-color);
+		/* border: 0.2rem solid var(--font-color); */
 	}
 }
 
@@ -269,20 +274,38 @@ section {
 	}
 }
 
-.toggle {
+.btn.toggle {
+	display: flex;
+	align-items: center;
+	border: none;
 	color: var(--font-color);
-	background-color: var(--background-color);
-	padding: 0.5rem 1rem;
+	/* background-color: var(--background-color); */
+	/* padding: 0.5rem 1rem; */
+	padding: 0;
 	font-weight: 600;
 	transition: var(--hover-transition);
-	border: 0.2rem solid var(--font-color);
+	/* border: 0.2rem solid var(--font-color); */
 
 	&:hover,
 	&:focus,
 	&:focus-visible {
-		color: var(--background-color);
-		background-color: var(--font-color);
-		border: 0.2rem solid var(--font-color);
+		background-color: transparent !important;
+	}
+}
+
+.btn.toggle svg {
+	overflow: hidden;
+	transition: var(--hover-transition);
+	background-color: transparent !important;
+
+	&:hover,
+	&:focus,
+	&:focus-visible,
+	&:active {
+		/* color: var(--background-color);*/
+		/* background-color: var(--font-color); */
+		fill: var(--blue);
+		background-color: transparent !important;
 	}
 }
 
@@ -319,7 +342,8 @@ main .headshot {
 	flex-wrap: wrap;
 }
 
-.skills-list li p {
+.skill {
+	font-size: clamp(1rem, 2vw, 2rem);
 	background-color: var(--blue);
 	color: var(--background-color);
 	font-family: var(--header-font);
