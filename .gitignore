@@ -23,6 +23,5 @@ node_modules/
 # MacOS Files
 .DS_Store
 
-dist
 .cache
 .parcel-cache

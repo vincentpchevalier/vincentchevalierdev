@@ -2,7 +2,7 @@
 	"name": "vincentchevalierdev",
 	"version": "1.0.0",
 	"description": "Portfolio website for Vincent P Chevalier.",
-	"main": "index.js",
+	"source": "index.html",
 	"scripts": {
 		"start": "parcel",
 		"build": "parcel build index.html --public-url ./"
