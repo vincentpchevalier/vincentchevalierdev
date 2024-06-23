@@ -1,0 +1,13 @@
+{
+  "name": "vincentchevalierdev",
+  "version": "1.0.0",
+  "description": "Portfolio website for Vincent P Chevalier.",
+  "main": "app.js",
+  "repository": "https://github.com/vincentpchevalier/vincentchevalierdev",
+  "author": "Vincent P Chevalier",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
