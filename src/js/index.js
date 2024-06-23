@@ -1,5 +1,6 @@
 import CONTACT from './contact.js';
 import THEME from './theme.js';
+import TOAST from './toast.js';
 
 const APP = {
 	mode: null,
@@ -7,17 +8,24 @@ const APP = {
 	footer: null,
 	toTop: null,
 	isHome: location.pathname.includes('index.html') || location.pathname === '/',
+	version: 'v1.0',
 
 	init() {
-		console.log('App initialized');
+		const hash = window.location.hash.replace(/^#/, '');
+		const el = document.getElementById(hash);
+		this.focusOnElement(el);
 
 		this.footer = this.isHome
 			? document.querySelector('#home footer')
 			: document.querySelector('#projects footer');
 
+		this.footer.querySelector('.version').textContent = this.version;
+
 		this.toTop = document.querySelector('.to-top');
 
 		THEME.init();
+		TOAST.init();
+
 		this.mode = THEME.getMode();
 
 		this.observeThemeChange();
@@ -38,9 +46,7 @@ const APP = {
 					mutation.attributeName === 'data-theme'
 				) {
 					newMode = mutation.target.dataset.theme;
-					console.log(`Mode changed to ${newMode}`);
 					localStorage.setItem('mode', newMode);
-					console.log(`Mode stored as ${newMode} in localStorage.`);
 					if (this.isHome) CONTACT.updateFormStyle(newMode);
 				}
 			});
@@ -60,6 +66,30 @@ const APP = {
 		});
 
 		footerObserver.observe(this.footer);
+	},
+
+	isFocusable(el) {
+		const focusableEls =
+			'a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]),  button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+		const isFocusable = el.matches(focusableEls) && !el.matches(':hidden');
+
+		return isFocusable;
+	},
+
+	focusOnElement(el) {
+		// extra logic to focus on element if it is not focusable for Safari
+		if (!el) return;
+		if (!this.isFocusable(el)) {
+			el.setAttribute('tabindex', '-1');
+			el.addEventListener(
+				'blur',
+				() => {
+					el.removeAttribute('tabindex');
+				},
+				{ once: true }
+			);
+		}
+		el.focus();
 	},
 
 	showToTop(entries) {

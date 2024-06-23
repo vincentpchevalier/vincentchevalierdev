@@ -1,0 +1,17 @@
+{
+	"name": "vincentchevalierdev",
+	"version": "1.0.0",
+	"description": "Portfolio website for Vincent P Chevalier.",
+	"source": "src/index.html",
+	"scripts": {
+		"start": "parcel",
+		"build": "parcel build --dist-dir public"
+	},
+	"repository": "https://github.com/vincentpchevalier/vincentchevalierdev",
+	"author": "Vincent P Chevalier",
+	"license": "MIT",
+	"private": false,
+	"devDependencies": {
+		"parcel": "^2.12.0"
+	}
+}

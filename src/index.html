@@ -12,9 +12,9 @@
 			rel="stylesheet"
 		/>
 
-		<link rel="stylesheet" href="./css/index.css" />
+		<link rel="stylesheet" href="./css/style.css" />
 
-		<script src="./js/app.js" type="module"></script>
+		<script src="./js/index.js" type="module"></script>
 	</head>
 	<body id="home">
 		<ul class="skip-links" role="menu">
@@ -24,7 +24,7 @@
 		<header>
 			<div class="container">
 				<img
-					src="./images/headshot.jpg"
+					src="./img/headshot.jpg"
 					alt="Vincent Chevalier"
 					class="headshot"
 				/>
@@ -56,7 +56,7 @@
 				<section class="intro">
 					<div class="intro-banner">
 						<img
-							src="./images/headshot.jpg"
+							src="./img/headshot.jpg"
 							alt="Vincent Chevalier"
 							class="headshot"
 						/>
@@ -89,8 +89,12 @@
 								>MADD Industry Projects - The Home App 🏡</a
 							>
 						</li>
-						<li><a href="./projects.html#projectB">Fun API Project 🚀</a></li>
-						<li><a href="./projects.html#projectC">Cool React App 😎</a></li>
+						<li>
+							<a href="./projects.html#projectB">Fun API Project 🚀</a>
+						</li>
+						<li>
+							<a href="./projects.html#projectC">Cool React App 😎</a>
+						</li>
 					</ul>
 				</section>
 
@@ -153,10 +157,14 @@
 
 		<footer>
 			<div class="container">
-				<a href="/" class="site-info">
-					<small>&copy; Vincent Chevalier 2024</small>
+				<a
+					href="https://github.com/vincentpchevalier/vincentchevalierdev"
+					class="site-info"
+				>
+					<small>Vincent Chevalier 2024</small>
 				</a>
-				<a href="/" class="site-info"
+				<small class="site-info version"></small>
+				<a href="https://opensource.org/license/mit" class="site-info"
 					><small>Open Source / MIT License</small></a
 				>
 			</div>
@@ -167,7 +175,22 @@
 				>To top</a
 			>
 		</footer>
+		<div id="toast" role="alert" aria-live="polite" aria-atomic="true">
+			<p class="toast-message"></p>
 
-		<div class="click-to-close"></div>
+			<button class="btn toast-button" aria-label="Close toast message">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 25 25"
+					overflow="visible"
+					stroke-width="5"
+					stroke-linecap="round"
+					class="toast-close-icon"
+				>
+					<line x2="25" y2="25" />
+					<line x1="25" y2="25" />
+				</svg>
+			</button>
+		</div>
 	</body>
 </html>

@@ -1,3 +1,5 @@
+import TOAST from './toast.js';
+
 const CONTACT = {
 	isSubmitting: false,
 	contactForm: null,
@@ -5,7 +7,9 @@ const CONTACT = {
 
 	init(mode) {
 		this.contactForm = document.querySelector('.contact-form');
-		this.inputs = document.querySelectorAll('.contact-form input');
+		this.inputs = document.querySelectorAll(
+			'.contact-form input, .contact-form textarea'
+		);
 
 		this.inputs.forEach((input) => {
 			input.addEventListener(
@@ -70,20 +74,17 @@ const CONTACT = {
 	async submitContactForm(ev) {
 		ev.preventDefault();
 		ev.stopPropagation();
-		console.log('form submitted');
 
 		if (this.isSubmitting) {
-			alert('Please wait before submitting again.');
+			TOAST.show('Please wait before submitting again.');
 			return;
 		}
 
-		console.log(this.contactForm);
 		this.isSubmitting = true;
 		let success = false;
 		const submitBtn = this.contactForm.querySelector('button[type=submit]');
 		submitBtn.textContent = 'Sending...';
 		submitBtn.disabled = true;
-		console.log(submitBtn.disabled);
 
 		const action =
 			'https://script.google.com/macros/s/AKfycbzst69bx4uLqwVxdGel7Mtg5bk8lKp7VENSolbPLLXtwm0dwK_2tGAu6Pj9CzPp064_/exec';
@@ -91,7 +92,7 @@ const CONTACT = {
 		const data = new FormData(this.contactForm);
 
 		if (!this.validateFormData(data)) {
-			alert('Invalid input');
+			TOAST.show('Please fill out all required fields.', true);
 			return;
 		}
 
@@ -100,14 +101,14 @@ const CONTACT = {
 				method: 'POST',
 				body: data,
 			});
+
 			if (!response.ok) throw Error(response.statusText);
-			console.log(response);
+
 			success = true;
-			// TODO: create a snackbar message with success text
-			alert('Success!'); // temporary;
+
+			TOAST.show('Thank you for sending a message!');
 		} catch (err) {
-			// TODO: create a snackbar message with success text
-			console.error(err);
+			TOAST.show('Something went wrong. Please try again later.', true);
 		} finally {
 			this.inputs.forEach((input) => {
 				input.classList.remove('error');
