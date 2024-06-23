@@ -2,10 +2,10 @@
 	"name": "vincentchevalierdev",
 	"version": "1.0.0",
 	"description": "Portfolio website for Vincent P Chevalier.",
-	"source": "src/index.html",
+	"main": "index.js",
 	"scripts": {
 		"start": "parcel",
-		"build": "parcel build --dist-dir public"
+		"build": "parcel build index.html --public-url ./"
 	},
 	"repository": "https://github.com/vincentpchevalier/vincentchevalierdev",
 	"author": "Vincent P Chevalier",
