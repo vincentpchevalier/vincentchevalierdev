@@ -80,7 +80,6 @@ const CONTACT = {
 			return;
 		}
 
-		console.log(this.contactForm);
 		this.isSubmitting = true;
 		let success = false;
 		const submitBtn = this.contactForm.querySelector('button[type=submit]');
