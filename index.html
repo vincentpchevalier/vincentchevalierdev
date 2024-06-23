@@ -12,9 +12,9 @@
 			rel="stylesheet"
 		/>
 
-		<link rel="stylesheet" href="./css/index.css" />
+		<link rel="stylesheet" href="./src/css/index.css" />
 
-		<script src="./js/app.js" type="module"></script>
+		<script src="./src/js/index.js" type="module"></script>
 	</head>
 	<body id="home">
 		<ul class="skip-links" role="menu">
@@ -24,7 +24,7 @@
 		<header>
 			<div class="container">
 				<img
-					src="./images/headshot.jpg"
+					src="./src/img/headshot.jpg"
 					alt="Vincent Chevalier"
 					class="headshot"
 				/>
@@ -56,7 +56,7 @@
 				<section class="intro">
 					<div class="intro-banner">
 						<img
-							src="./images/headshot.jpg"
+							src="./src/img/headshot.jpg"
 							alt="Vincent Chevalier"
 							class="headshot"
 						/>
@@ -85,12 +85,18 @@
 					<h2>Projects</h2>
 					<ul class="projects-list">
 						<li>
-							<a href="./projects.html#projectA"
+							<a href="./src/pages/projects.html#projectA"
 								>MADD Industry Projects - The Home App 🏡</a
 							>
 						</li>
-						<li><a href="./projects.html#projectB">Fun API Project 🚀</a></li>
-						<li><a href="./projects.html#projectC">Cool React App 😎</a></li>
+						<li>
+							<a href="./src/pages/projects.html#projectB"
+								>Fun API Project 🚀</a
+							>
+						</li>
+						<li>
+							<a href="./src/pages/projects.html#projectC">Cool React App 😎</a>
+						</li>
 					</ul>
 				</section>
 
@@ -157,10 +163,10 @@
 					href="https://github.com/vincentpchevalier/vincentchevalierdev"
 					class="site-info"
 				>
-					<small>&copy; Vincent Chevalier 2024</small>
+					<small>Vincent Chevalier 2024</small>
 				</a>
 				<small class="site-info version"></small>
-				<a href="https://opensource.org/osd" class="site-info"
+				<a href="https://opensource.org/license/mit" class="site-info"
 					><small>Open Source / MIT License</small></a
 				>
 			</div>
