@@ -1,7 +1,7 @@
 # vincentchevalier.dev
 
 <p>The personal website for Vincent P Chevalier</p>
-<a href="https://github.com/vincentpchevalier/vincentchevalierdev">https://github.com/vincentpchevalier/vincentchevalierdev</a>
+<a href="http://www.vincentchevalier.dev">www.vincentchevalier.dev</a>
 
 ## Photo Credits
 
