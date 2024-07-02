@@ -419,7 +419,17 @@ form .btn {
   margin-bottom: var(--margin-large);
 }
 
-.project-header, .project-description {
+.project-header {
+  margin-bottom: var(--margin-small);
+}
+
+.project-header img {
+  width: 100%;
+  max-width: 80rem;
+  height: auto;
+}
+
+.project-description {
   margin-bottom: var(--margin-small);
 }
 
