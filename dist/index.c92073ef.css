@@ -302,12 +302,16 @@ footer .container {
   font-size: clamp(.8rem, 2vw, 1rem);
 }
 
-header .headshot {
-  display: none;
+.headshot {
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 30rem;
+  height: auto;
+  margin: 0;
 }
 
-main .headshot {
-  border-radius: 1rem;
+header .headshot {
+  display: none;
 }
 
 .skills-list {
@@ -454,7 +458,7 @@ form .btn {
   header .headshot {
     border-radius: 50%;
     align-self: center;
-    max-width: 6rem;
+    max-width: 6.25rem;
     margin: 2rem 0;
     display: block;
   }
@@ -513,7 +517,7 @@ form .btn {
   header .headshot {
     border-radius: 50%;
     align-self: center;
-    max-width: 8rem;
+    max-width: 8.5rem;
     margin: 1.5rem 0 2rem;
   }
 

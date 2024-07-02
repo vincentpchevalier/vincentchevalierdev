@@ -371,12 +371,16 @@ footer .container {
 
 /* Headshot */
 
-header .headshot {
-	display: none;
+.headshot {
+	width: 100%;
+	max-width: 30rem;
+	height: auto;
+	margin: 0;
+	border-radius: 1rem;
 }
 
-main .headshot {
-	border-radius: 1rem;
+header .headshot {
+	display: none;
 }
 
 /* Skills */
@@ -546,7 +550,7 @@ form .btn {
 	header .headshot {
 		display: block;
 		align-self: center;
-		max-width: 6rem;
+		max-width: 6.25rem;
 		border-radius: 50%;
 		margin: 2rem 0;
 	}
@@ -616,7 +620,7 @@ form .btn {
 
 	header .headshot {
 		align-self: center;
-		max-width: 8rem;
+		max-width: 8.5rem;
 		border-radius: 50%;
 		margin: 1.5rem 0 2rem;
 	}
