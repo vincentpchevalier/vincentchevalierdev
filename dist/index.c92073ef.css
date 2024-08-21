@@ -290,12 +290,16 @@ footer .container {
   font-size: clamp(.8rem, 2vw, 1rem);
 }
 
-header .headshot {
-  display: none;
+.headshot {
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 40rem;
+  height: auto;
+  margin: 0;
 }
 
-main .headshot {
-  border-radius: 1rem;
+header .headshot {
+  display: none;
 }
 
 .skills-list {
@@ -415,7 +419,17 @@ form .btn {
   margin-bottom: var(--margin-large);
 }
 
-.project-header, .project-description {
+.project-header {
+  margin-bottom: var(--margin-small);
+}
+
+.project-header img {
+  width: 100%;
+  max-width: 80rem;
+  height: auto;
+}
+
+.project-description {
   margin-bottom: var(--margin-small);
 }
 
@@ -442,7 +456,7 @@ form .btn {
   header .headshot {
     border-radius: 50%;
     align-self: center;
-    max-width: 6rem;
+    max-width: 6.25rem;
     margin: 2rem 0;
     display: block;
   }
@@ -459,11 +473,6 @@ form .btn {
     margin-bottom: var(--margin-small);
     align-items: end;
     display: flex;
-  }
-
-  .intro-banner img {
-    width: 20rem;
-    margin: 0;
   }
 
   .intro-hello {
@@ -501,7 +510,7 @@ form .btn {
   header .headshot {
     border-radius: 50%;
     align-self: center;
-    max-width: 8rem;
+    max-width: 8.5rem;
     margin: 1.5rem 0 2rem;
   }
 
