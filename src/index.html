@@ -51,13 +51,23 @@
 			<div class="container">
 				<section class="intro">
 					<div class="intro-banner">
-						<img
-							src="./img/headshot.jpg"
-							alt="Vincent Chevalier"
-							class="headshot"
-							height="640"
-							width="640"
-						/>
+						<picture>
+							<source
+								srcset="./img/headshot.jpg?as=webp&width=640"
+								type="image/webp"
+							/>
+							<source
+								srcset="./img/headshot.jpg?as=avif&width=640"
+								type="image/avif"
+							/>
+							<img
+								src="./img/headshot.jpg"
+								alt="Vincent Chevalier"
+								class="headshot"
+								height="640"
+								width="640"
+							/>
+						</picture>
 						<div class="intro-hello">
 							<h2 class="greetings">Hello there 👋</h2>
 							<h1 class="greetings">My name's Vincent!</h1>
