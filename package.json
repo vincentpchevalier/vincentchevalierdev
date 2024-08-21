@@ -3,8 +3,9 @@
 	"version": "1.0.0",
 	"description": "Portfolio website for Vincent P Chevalier.",
 	"scripts": {
-		"start": "parcel src/index.html",
-		"build": "parcel build src/index.html --public-url ./"
+		"clean:output": "rimraf dist",
+		"start": "yarn clean:output && parcel src/index.html",
+		"build": "yarn clean:output && parcel build src/index.html --public-url ./"
 	},
 	"repository": "https://github.com/vincentpchevalier/vincentchevalierdev",
 	"author": "Vincent P Chevalier",
