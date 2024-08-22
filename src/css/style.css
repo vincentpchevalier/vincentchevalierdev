@@ -1,3 +1,26 @@
+/* @font-face unicode-range is optimized for most common Latin letters: A-Z, a-z, 0-9, punctuation, and common symbols. */
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 100 900;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2)
+		format('woff2');
+	unicode-range: U+0020-007F, U+00A0-00FF, U+00B5, U+00C0-00D6, U+00D8-00F6,
+		U+00F8-024F;
+}
+
+@font-face {
+	font-family: 'JetBrains Mono';
+	font-style: normal;
+	font-weight: 100 800;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/jetbrainsmono/v18/tDbV2o-flEEny0FZhsfKu5WU4xD7OwGtT0rU.woff2)
+		format('woff2');
+	unicode-range: U+0020-007F, U+00A0-00FF, U+00B5, U+00C0-00D6, U+00D8-00F6,
+		U+00F8-024F;
+}
+
 :root {
 	--light: #f0ffff;
 	--dark: #0d1d2a;
@@ -359,12 +382,16 @@ footer .container {
 
 /* Headshot */
 
-header .headshot {
-	display: none;
+.headshot {
+	width: 100%;
+	max-width: 40rem;
+	height: auto;
+	margin: 0;
+	border-radius: 1rem;
 }
 
-main .headshot {
-	border-radius: 1rem;
+header .headshot {
+	display: none;
 }
 
 /* Skills */
@@ -502,6 +529,12 @@ form .btn {
 	margin-bottom: var(--margin-small);
 }
 
+.project-header img {
+	width: 100%;
+	max-width: 80rem;
+	height: auto;
+}
+
 .project-description {
 	margin-bottom: var(--margin-small);
 }
@@ -534,7 +567,7 @@ form .btn {
 	header .headshot {
 		display: block;
 		align-self: center;
-		max-width: 6rem;
+		max-width: 6.25rem;
 		border-radius: 50%;
 		margin: 2rem 0;
 	}
@@ -556,11 +589,6 @@ form .btn {
 
 	.intro-banner {
 		margin-bottom: var(--margin-small);
-	}
-
-	.intro-banner img {
-		width: 20rem;
-		margin: 0;
 	}
 
 	.intro-hello {
@@ -604,7 +632,7 @@ form .btn {
 
 	header .headshot {
 		align-self: center;
-		max-width: 8rem;
+		max-width: 8.5rem;
 		border-radius: 50%;
 		margin: 1.5rem 0 2rem;
 	}
