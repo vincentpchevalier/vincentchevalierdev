@@ -12,7 +12,10 @@
 	"license": "MIT",
 	"private": false,
 	"devDependencies": {
+		"@parcel/compressor-brotli": "^2.12.0",
+		"@parcel/compressor-gzip": "^2.12.0",
 		"parcel": "^2.12.0",
-		"rimraf": "^5.0.7"
+		"rimraf": "^5.0.7",
+		"sharp": "^0.31.1"
 	}
 }
