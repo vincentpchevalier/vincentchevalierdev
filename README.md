@@ -10,11 +10,13 @@
 
 <a href="http://www.vincentchevalier.dev">www.vincentchevalier.dev</a>
 
-## Photo Credits
+## Changelog
 
-- Photo by Clark Cruz: <a href="https://www.pexels.com/photo/ferris-wheel-at-night-2911364/">Ferris wheel at night</a>
-- Photo by Pixabay: <a href="https://www.pexels.com/photo/close-up-photography-of-yellow-green-red-and-brown-plastic-cones-on-white-lined-surface-163064/">Play pieces on a game board</a>
-- Photo by Lukas: <a href="https://www.pexels.com/photo/low-angle-view-of-human-representation-of-grass-296085/">Representation of grass</a>
+All notable changes to this project are documented in the [CHANGELOG.md](CHANGELOG.md).
+
+## Contact
+
+If you have any questions or feedback, please don't hesitate to reach out to me at vincentpchevalier at pm dot me.
 
 ## License
 
