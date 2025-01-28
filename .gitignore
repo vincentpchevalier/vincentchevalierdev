@@ -8,9 +8,6 @@ yarn-error.log*
 # Dependency directories
 node_modules/
 
-# Package manager files
-yarn.lock
-
 # Optional npm cache directory
 .npm
 
@@ -26,8 +23,10 @@ yarn.lock
 # MacOS Files
 .DS_Store
 
+# deployment
 .cache
 .parcel-cache
+dist/
 
 # VSCode local config
 .vscode
