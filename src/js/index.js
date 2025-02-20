@@ -1,3 +1,5 @@
+import { VERSION } from './version.js';
+
 import CONTACT from './contact.js';
 import THEME from './theme.js';
 import TOAST from './toast.js';
@@ -8,7 +10,7 @@ const APP = {
 	footer: null,
 	toTop: null,
 	isHome: location.pathname.includes('index.html') || location.pathname === '/',
-	version: 'v1.0',
+	version: VERSION,
 
 	init() {
 		const hash = window.location.hash.replace(/^#/, '');
@@ -19,7 +21,7 @@ const APP = {
 			? document.querySelector('#home footer')
 			: document.querySelector('#projects footer');
 
-		this.footer.querySelector('.version').textContent = this.version;
+		this.footer.querySelector('.version').textContent = `v${this.version}`;
 
 		this.toTop = document.querySelector('.to-top');
 
