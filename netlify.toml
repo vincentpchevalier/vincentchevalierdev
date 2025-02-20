@@ -1,0 +1,19 @@
+[[headers]]
+for = "/*"
+  [headers.values]
+  Content-Security-Policy = """
+    default-src 'self';
+    script-src 'self';
+    style-src 'self' 'unsafe-inline';
+    img-src 'self';
+    font-src 'self' https://fonts.gstatic.com;
+    connect-src 'self' https://script.google.com;
+    frame-src 'none';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    upgrade-insecure-requests;
+  """
+  X-Frame-Options = "DENY"
+  Referrer-Policy = "no-referrer"
+  Permissions-Policy = "geolocation=(), microphone=()"
