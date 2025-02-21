@@ -1,4 +1,4 @@
-import { VERSION } from './version.js';
+import { VERSION, LAST_UPDATED } from './version.js';
 
 import CONTACT from './contact.js';
 import THEME from './theme.js';
@@ -10,9 +10,16 @@ const APP = {
 	footer: null,
 	toTop: null,
 	isHome: location.pathname.includes('index.html') || location.pathname === '/',
-	version: VERSION,
 
 	init() {
+		const versionMeta = document.querySelector('meta[name="site-version"]');
+		versionMeta.setAttribute('content', VERSION);
+
+		const buildDateMeta = document.querySelector(
+			'meta[name="site-build-date"]'
+		);
+		buildDateMeta.setAttribute('content', `Last updated: ${LAST_UPDATED}`);
+
 		const hash = window.location.hash.replace(/^#/, '');
 		const el = document.getElementById(hash);
 		this.focusOnElement(el);
@@ -21,7 +28,7 @@ const APP = {
 			? document.querySelector('#home footer')
 			: document.querySelector('#projects footer');
 
-		this.footer.querySelector('.version').textContent = `v${this.version}`;
+		this.footer.querySelector('.version').textContent = `v${VERSION}`;
 		this.footer.querySelector('.current-year').textContent =
 			new Date().getFullYear();
 
