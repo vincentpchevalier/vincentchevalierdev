@@ -22,6 +22,8 @@ const APP = {
 			: document.querySelector('#projects footer');
 
 		this.footer.querySelector('.version').textContent = `v${this.version}`;
+		this.footer.querySelector('.current-year').textContent =
+			new Date().getFullYear();
 
 		this.toTop = document.querySelector('.to-top');
 
