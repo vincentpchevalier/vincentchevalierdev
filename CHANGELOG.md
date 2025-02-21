@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.2.0] - 2025-02-21
+
+### Added
+
+- Created netlify.toml with Content-Security-Policy to improve security.
+- Added Redis PubSub project link to the list of projects.
+- Updated the list of social links to include Medium and Bluesky.
+- Implemented a prebuild script to track versioning and build date dynamically.
+- Included dynamic versioning in app.js for better version control.
+- Added a version.js file that gets generated on build (ignored in .gitignore).
+- Implemented a dynamic year in the footer using a current-year class.
+- Added meta tags for author, site version, and site build date.
+- Ensured meta tags dynamically update on initialization.
+
+### Fixed
+
+- Bug: Resolved Sharp version conflict for Netlify deployment.
+
 ## [1.1.0] - 2025-01-30
 
 ### Added
