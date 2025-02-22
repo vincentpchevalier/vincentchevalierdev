@@ -1,0 +1,15 @@
+<ul class="projects-list">
+	<each loop="project in projects">
+		<li class="project" id="projectA">
+			<div class="project-header">
+				<h2>{{project.title}}</h2>
+			</div>
+			<ul class="skills-list">
+				<each loop="skill in project.skills">
+					<li class="skill">{{skill}}</li>
+				</each>
+			</ul>
+			<p class="project-description">{{project.description}}</p>
+		</li>
+	</each>
+</ul>
