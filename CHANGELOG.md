@@ -4,6 +4,32 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.3.0] - 2025-02-21
+
+### Added
+
+- Installed PostHTML with posthtml-expressions and posthtml-include for HTML template preprocessing.
+- Built posthtml.config.json template to streamline build process.
+- Created prebuild script to generate .posthtmlrc configuration file based on JSON data and posthtml.config.json.
+- Cleaned up prebuild.js for better maintainability.
+- HTML templating:
+  - Created partials directory for HTML templates.
+  - Converted the skill list into a template for easier management.
+  - Used template to insert metadata dynamically from data.json into head section on build.
+  - Templated version number into footer section.
+- Implemented version metadata injection:
+  - Created a PostHTML transformation for inserting version numbers.
+  - Included metadata object in locals object for consistency.
+
+### Removed
+
+- Deleted function to create a version.js file.
+- Deleted DOM manipulation for version injection on initialization.
+
+### Fixed
+
+- Removed an unneeded comment in partials for cleaner code.
+
 ## [1.2.0] - 2025-02-21
 
 ### Added
