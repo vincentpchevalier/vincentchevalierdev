@@ -16,6 +16,7 @@
 	],
 	"projects": [
 		{
+			"id": "redis-session-pubsub",
 			"title": "Redis Sessions PubSub Demo",
 			"description": "This project showcases lightweight, scalable session management with Redis Sets and Pub/Sub, enabling real-time communication in session-based applications. Built with Express, the application provides robust CRUD operations for session and user management. Once a session is created and joined, Pub/Sub enables real-time updates and messaging between users. The project leverages Redis for efficient data handling, with future plans to transition toward WebSockets for event-driven updates.",
 			"imgSrc": "../src/img/pexels-clark-cruz-1064141-2911364.jpg",
