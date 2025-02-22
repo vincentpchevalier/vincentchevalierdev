@@ -3,26 +3,6 @@ const path = require('path');
 const package = require('../package.json');
 
 try {
-	// Generate info file for build
-	const version = package.version;
-
-	const buildDate = new Date().toLocaleDateString('en-CA', {
-		year: 'numeric',
-		month: 'long',
-		day: 'numeric',
-		timeZone: 'America/Toronto',
-	});
-
-	const content = `export const VERSION = '${version}';\nexport const LAST_UPDATED = '${buildDate}';`;
-
-	const filePath = path.join(__dirname, '../src/js/version.js');
-
-	writeFileSync(filePath, content, 'utf-8');
-
-	console.log(
-		`👋 Version file generated: VERSION=${version}, LAST_UPDATED=${buildDate} 👋`
-	);
-
 	// take data and prepare it for the posthtml build config file
 	const dataFilePath = path.join(__dirname, '../data/data.json');
 	const configFilePath = path.join(__dirname, '../data/posthtml.config.json');
@@ -34,14 +14,23 @@ try {
 	const projects = data.projects;
 	const metadata = data.metadata;
 
-	metadata.version = version;
-	metadata.buildDate = buildDate;
-
 	const skills = Array.from(
 		new Set(
 			projects.reduce((acc, project) => acc.concat(project.skills), data.skills)
 		)
 	);
+
+	const version = package.version;
+
+	const buildDate = new Date().toLocaleDateString('en-CA', {
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric',
+		timeZone: 'America/Toronto',
+	});
+
+	metadata.version = version;
+	metadata.buildDate = buildDate;
 
 	const locals = { skills, projects, metadata };
 
