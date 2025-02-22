@@ -32,6 +32,10 @@ try {
 	const config = JSON.parse(readFileSync(configFilePath, 'utf-8'));
 
 	const projects = data.projects;
+	const metadata = data.metadata;
+
+	metadata.version = version;
+	metadata.buildDate = buildDate;
 
 	const skills = Array.from(
 		new Set(
@@ -39,15 +43,13 @@ try {
 		)
 	);
 
-	const locals = { skills, projects };
+	const locals = { skills, projects, metadata };
 
 	config.plugins['posthtml-expressions'].locals = locals;
 
 	writeFileSync(outputPath, JSON.stringify(config, null, 2));
 
-	console.log(
-		`👋 Preprocessed data file generated. Saved to: ${outputPath} 👋`
-	);
+	console.log(`👋 PostHTML config file created. Saved to: ${outputPath} 👋`);
 } catch (error) {
 	console.error(`⛔️ Error generating version file: ${error.message}`);
 }
