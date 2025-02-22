@@ -1,0 +1,29 @@
+{
+	"skills": [
+		"HTML",
+		"CSS",
+		"JavaScript",
+		"React",
+		"Next.js",
+		"Node.js",
+		"Express",
+		"MongoDB",
+		"Redis",
+		"Version Control",
+		"Responsive Design",
+		"Project Management",
+		"Web Accessibility"
+	],
+	"projects": [
+		{
+			"title": "Redis Sessions PubSub Project",
+			"description": "This project showcases lightweight and scalable session management using Redis Sets and Pub/Sub to enable real-time communication in a session-based application.",
+			"image": "../src/img/pexels-clark-cruz-1064141-2911364.jpg",
+			"links": {
+				"github": "https://github.com/vincentpchevalier/redis-session-pubsub",
+				"medium": "https://medium.com/@chev0100/build-a-scalable-session-based-communication-app-using-redis-pub-sub-and-node-js-d09f9dc0b16b"
+			},
+			"skills": ["Redis", "Express", "Node.js", "Back End Development"]
+		}
+	]
+}
