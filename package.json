@@ -4,7 +4,7 @@
 	"description": "Portfolio website for Vincent P Chevalier.",
 	"scripts": {
 		"clean:output": "rimraf dist",
-		"start": "parcel src/index.html",
+		"start": "parcel src/index.html --no-cache --open",
 		"prebuild": "node ./scripts/prebuild.js",
 		"build": "yarn clean:output && parcel build src/index.html --public-url ./"
 	},
