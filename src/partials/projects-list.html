@@ -10,6 +10,13 @@
 				</each>
 			</ul>
 			<p class="project-description">{{project.description}}</p>
+			<ul class="links">
+				<each loop="link in project.links">
+					<li>
+						<a href="{{link.link}}">{{link.title}}</a>
+					</li>
+				</each>
+			</ul>
 		</li>
 	</each>
 </ul>
