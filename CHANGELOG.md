@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.4.0] - 2025-02-21
+
+### Added
+
+- Implemented a dynamic projects list using a PostHTML template and JSON data.
+- Added project IDs to uniquely identify each project.
+
+### Updated
+
+- Adjusted the styling for project blocks to enhance the visual presentation.
+- Uncommented the projects page link, making it accessible again.
+- Improved yarn start script to better facilitate HMR (Hot Module Replacement).
+
+### Fixed
+
+- Fixed footer on projects page.
+
 ## [1.3.0] - 2025-02-21
 
 ### Added
