@@ -28,7 +28,10 @@ node_modules/
 .cache/
 .parcel-cache/
 dist/
+
+# Dynamically generated on build
 src/js/version.js
+.posthtmlrc
 
 # IDE & Editor Configs
 .vscode/
