@@ -16,13 +16,22 @@
 	],
 	"projects": [
 		{
-			"title": "Redis Sessions PubSub Project",
-			"description": "This project showcases lightweight and scalable session management using Redis Sets and Pub/Sub to enable real-time communication in a session-based application.",
-			"image": "../src/img/pexels-clark-cruz-1064141-2911364.jpg",
-			"links": {
-				"github": "https://github.com/vincentpchevalier/redis-session-pubsub",
-				"medium": "https://medium.com/@chev0100/build-a-scalable-session-based-communication-app-using-redis-pub-sub-and-node-js-d09f9dc0b16b"
-			},
+			"id": "redis-session-pubsub",
+			"title": "Redis Sessions PubSub Demo",
+			"description": "This project showcases lightweight, scalable session management with Redis Sets and Pub/Sub, enabling real-time communication in session-based applications. Built with Express, the application provides robust CRUD operations for session and user management. Once a session is created and joined, Pub/Sub enables real-time updates and messaging between users. The project leverages Redis for efficient data handling, with future plans to transition toward WebSockets for event-driven updates.",
+			"imgSrc": "../src/img/pexels-clark-cruz-1064141-2911364.jpg",
+			"links": [
+				{
+					"link": "https://github.com/vincentpchevalier/redis-session-pubsub",
+					"site": "GitHub",
+					"title": "Redis PubSub Demo"
+				},
+				{
+					"link": "https://medium.com/@chev0100/build-a-scalable-session-based-communication-app-using-redis-pub-sub-and-node-js-d09f9dc0b16b",
+					"site": "Medium",
+					"title": "Build a Scalable Session-Based Communication App Using Redis Pub/Sub and Node.js"
+				}
+			],
 			"skills": ["Redis", "Express", "Node.js", "Back End Development"]
 		}
 	],

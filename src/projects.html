@@ -4,10 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<meta
-			name="description"
-			content="Browse the projects of Vincent P. Chevalier, featuring modern web technologies such as React, NextJS, Node.js, TypeScript, and more. Each project highlights a commitment to best development practices and user accessibility."
-		/>
+		<include src="./metadata.html"></include>
 
 		<title>Vincent Chevalier | Projects</title>
 
@@ -59,119 +56,7 @@
 						Projects
 						<span class="visually-hidden">Vincent Chevalier</span>
 					</h1>
-					<ul class="projects-list">
-						<li class="project" id="projectA">
-							<div class="project-header">
-								<h2>Example Project One</h2>
-								<picture>
-									<source
-										srcset="./img/pexels-pixabay-163064.jpg?as=webp&width=1280"
-										type="image/webp"
-									/>
-									<source
-										srcset="./img/pexels-pixabay-163064.jpg?as=avif&width=1280"
-										type="image/avif"
-									/>
-									<img
-										src="./img/pexels-pixabay-163064.jpg"
-										alt="Play pieces on a game board"
-										width="1280"
-										height="800"
-									/>
-								</picture>
-							</div>
-							<p class="project-description">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-								enim ad minim veniam, quis nostrud exercitation ullamco laboris
-								nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-								in.
-							</p>
-							<ul class="skills-list">
-								<li class="skill">React</li>
-								<li class="skill">Node.js</li>
-								<li class="skill">Express</li>
-								<li class="skill">MongoDB</li>
-								<li class="skill">Github</li>
-							</ul>
-						</li>
-
-						<li class="project" id="projectB">
-							<div class="project-header">
-								<h2>Example Project Two</h2>
-								<picture>
-									<source
-										srcset="./img/pexels-goumbik-296085.jpg?as=webp&width=1280"
-										type="image/webp"
-									/>
-									<source
-										srcset="./img/pexels-goumbik-296085.jpg?as=avif&width=1280"
-										type="image/avif"
-									/>
-									<img
-										src="./img/pexels-goumbik-296085.jpg"
-										alt="Laptop on a stump in the forest"
-										width="1280"
-										height="800"
-									/>
-								</picture>
-							</div>
-							<p class="project-description">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-								enim ad minim veniam, quis nostrud exercitation ullamco laboris
-								nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-								in.
-							</p>
-							<ul class="skills-list">
-								<li class="skill">Flutter/dart</li>
-								<li class="skill">Design</li>
-								<li class="skill">Project Management</li>
-								<li class="skill">Firebase</li>
-								<li class="skill">Azure DevOps</li>
-							</ul>
-						</li>
-
-						<li class="project" id="projectC">
-							<div class="project-header">
-								<h2>Example Project Three</h2>
-								<picture>
-									<source
-										srcset="
-											./img/pexels-clark-cruz-1064141-2911364.jpg?as=webp&width=1280
-										"
-										type="image/webp"
-									/>
-									<source
-										srcset="
-											./img/pexels-clark-cruz-1064141-2911364.jpg?as=avif&width=1280
-										"
-										type="image/avif"
-									/>
-									<img
-										src="./img/pexels-clark-cruz-1064141-2911364.jpg"
-										alt="Ferris wheel at night"
-										width="1280"
-										height="800"
-									/>
-								</picture>
-							</div>
-							<p class="project-description">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-								enim ad minim veniam, quis nostrud exercitation ullamco laboris
-								nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-								in.
-							</p>
-							<ul class="skills-list">
-								<li class="skill">Flutter/dart</li>
-								<li class="skill">Design</li>
-								<li class="skill">Project Management</li>
-								<li class="skill">Firebase</li>
-								<li class="skill">Azure DevOps</li>
-							</ul>
-						</li>
-					</ul>
+					<include src="./projects-list.html"></include>
 				</section>
 			</div>
 		</main>
@@ -182,9 +67,12 @@
 					href="https://github.com/vincentpchevalier/vincentchevalierdev"
 					class="site-info"
 				>
-					<small>&copy; Vincent Chevalier 2024</small>
+					<small
+						>&copy; Vincent Chevalier
+						<span class="current-year">20xx</span></small
+					>
 				</a>
-				<small class="site-info version">v1.0</small>
+				<include src="./version.html"></include>
 				<a href="https://opensource.org/license/mit" class="site-info"
 					><small>Open Source / MIT License</small></a
 				>
