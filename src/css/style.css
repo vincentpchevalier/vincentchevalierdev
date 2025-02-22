@@ -35,6 +35,7 @@
 		fill 200ms;
 
 	--padding-default: 2rem;
+	--margin-xsmall: 1rem;
 	--margin-small: 2rem;
 	--margin-large: 3rem;
 }
@@ -46,6 +47,7 @@ html {
 html[data-theme='light'] {
 	--background-color: var(--light);
 	--font-color: var(--dark);
+	--header-color: var(--blue);
 	--pink: #f87060;
 	--red: #650c00;
 	--green: #5ab80d;
@@ -61,6 +63,7 @@ html[data-theme='light'] {
 html[data-theme='dark'] {
 	--background-color: var(--dark);
 	--font-color: var(--light);
+	--header-color: var(--blue);
 	--pink: #f87060;
 	--red: #fe4b34;
 	--green: #c6eda6;
@@ -226,7 +229,7 @@ h2 {
 }
 
 #projects h2 {
-	font-size: clamp(1.6rem, 2vw, 2rem);
+	font-size: clamp(1.6rem, 2vw, 3rem);
 }
 
 a {
@@ -246,7 +249,7 @@ textarea {
 }
 
 #projects p {
-	font-size: clamp(1.2rem, 2vw, 1.8rem);
+	font-size: clamp(1.2rem, 2vw, 1.4rem);
 }
 
 .btn {
@@ -417,10 +420,6 @@ header .headshot {
 	}
 }
 
-#projects .skill {
-	font-size: clamp(1rem, 2vw, 1.4rem);
-}
-
 /* Home - Intro */
 
 .intro {
@@ -523,10 +522,22 @@ form .btn {
 
 .project {
 	margin-bottom: var(--margin-large);
+	border-bottom: 0.1rem solid var(--font-color);
+
+	&:last-child {
+		margin-bottom: 0;
+		border: none;
+	}
 }
 
 .project-header {
-	margin-bottom: var(--margin-small);
+	margin-bottom: var(--margin-xsmall);
+
+	h2 {
+		border-bottom: 0.1rem dotted var(--header-color);
+		padding-bottom: var(--margin-xsmall);
+		color: var(--header-color);
+	}
 }
 
 .project-header img {
@@ -535,8 +546,41 @@ form .btn {
 	height: auto;
 }
 
-.project-description {
-	margin-bottom: var(--margin-small);
+.project .skills-list {
+	gap: 0.5rem;
+	margin-top: var(--margin-xsmall);
+
+	.skill {
+		padding: 0.1rem 0.75rem;
+	}
+}
+
+.project .skill {
+	font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.project .links li {
+	display: flex;
+	gap: 0.5rem;
+	justify-content: start;
+	align-items: center;
+	max-width: var(--content-width);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+
+	font-size: clamp(1rem, 2vw, 1.2rem);
+	font-weight: 600;
+
+	& a {
+		font-size: clamp(1rem, 2vw, 1.2rem);
+		font-weight: 600;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		flex: 1;
+		min-width: 0;
+	}
 }
 
 /* Queries */
@@ -624,7 +668,7 @@ form .btn {
 @media only screen and (min-width: 65rem) {
 	.container {
 		--content-width: 65rem;
-		--margin-small: 3rem;
+		--margin-small: 2rem;
 		--margin-large: 4rem;
 	}
 
