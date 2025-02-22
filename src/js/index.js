@@ -12,14 +12,6 @@ const APP = {
 	isHome: location.pathname.includes('index.html') || location.pathname === '/',
 
 	init() {
-		const versionMeta = document.querySelector('meta[name="site-version"]');
-		versionMeta.setAttribute('content', VERSION);
-
-		const buildDateMeta = document.querySelector(
-			'meta[name="site-build-date"]'
-		);
-		buildDateMeta.setAttribute('content', `Last updated: ${LAST_UPDATED}`);
-
 		const hash = window.location.hash.replace(/^#/, '');
 		const el = document.getElementById(hash);
 		this.focusOnElement(el);
