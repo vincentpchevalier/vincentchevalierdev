@@ -25,5 +25,11 @@
 			},
 			"skills": ["Redis", "Express", "Node.js", "Back End Development"]
 		}
-	]
+	],
+	"metadata": {
+		"author": "Vincent P. Chevalier",
+		"description": "Vincent P. Chevalier - Web Developer and content creator blending creativity, a love for accessible technology and a commitment to best practices.",
+		"version": "0.0.0",
+		"buildDate": "January 1, 1983"
+	}
 }
