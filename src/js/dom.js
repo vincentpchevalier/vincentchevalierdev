@@ -1,3 +1,6 @@
+import THEME from './theme.js';
+import CONTACT from './contact.js';
+
 const DOM = {
 	mode: null,
 	isHome: null,
@@ -59,6 +62,9 @@ const DOM = {
 	},
 
 	setDOMElements() {
+		THEME.init();
+		this.mode = THEME.getMode();
+
 		this.footer = this.isHome
 			? document.querySelector('#home footer')
 			: document.querySelector('#projects footer');
@@ -67,5 +73,11 @@ const DOM = {
 			new Date().getFullYear();
 
 		this.toTop = document.querySelector('.to-top');
+
+		if (this.isHome) {
+			CONTACT.init(this.mode);
+		}
 	},
 };
+
+export default DOM;
