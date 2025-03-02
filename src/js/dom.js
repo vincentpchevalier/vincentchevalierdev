@@ -1,4 +1,9 @@
 const DOM = {
+	mode: null,
+	isHome: null,
+	footer: null,
+	toTop: null,
+	isHome: location.pathname.includes('index.html') || location.pathname === '/',
 	// OBSERVERS
 	// watches any changes to the THEME, stores choice in Local Storage, and updates the CONTACT form styles
 	observeThemeChange() {
