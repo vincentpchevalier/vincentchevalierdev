@@ -13,6 +13,34 @@ const DOM = {
 		this.setObservers();
 	},
 
+	// SET UP FUNCTIONS
+	setObservers() {
+		this.observeThemeChange();
+		this.observeScrollDistance();
+	},
+
+	setDOMElements() {
+		const hash = window.location.hash.replace(/^#/, '');
+		const el = document.getElementById(hash);
+		this.focusOnElement(el);
+
+		THEME.init();
+		this.mode = THEME.getMode();
+
+		this.footer = this.isHome
+			? document.querySelector('#home footer')
+			: document.querySelector('#projects footer');
+
+		this.footer.querySelector('.current-year').textContent =
+			new Date().getFullYear();
+
+		this.toTop = document.querySelector('.to-top');
+
+		if (this.isHome) {
+			CONTACT.init(this.mode);
+		}
+	},
+
 	// OBSERVERS
 	// watches any changes to the THEME, stores choice in Local Storage, and updates the CONTACT form styles
 	observeThemeChange() {
@@ -47,6 +75,7 @@ const DOM = {
 		footerObserver.observe(this.footer);
 	},
 
+	// HELPERS
 	showToTop(entries) {
 		const [entry] = entries;
 		if (!entry.isIntersecting) {
@@ -56,27 +85,28 @@ const DOM = {
 		this.toTop.classList.add('visible');
 	},
 
-	setObservers() {
-		this.observeThemeChange();
-		this.observeScrollDistance();
+	isFocusable(el) {
+		const focusableEls =
+			'a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]),  button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+		const isFocusable = el.matches(focusableEls) && !el.matches(':hidden');
+
+		return isFocusable;
 	},
 
-	setDOMElements() {
-		THEME.init();
-		this.mode = THEME.getMode();
-
-		this.footer = this.isHome
-			? document.querySelector('#home footer')
-			: document.querySelector('#projects footer');
-
-		this.footer.querySelector('.current-year').textContent =
-			new Date().getFullYear();
-
-		this.toTop = document.querySelector('.to-top');
-
-		if (this.isHome) {
-			CONTACT.init(this.mode);
+	focusOnElement(el) {
+		// extra logic to focus on element if it is not focusable for Safari
+		if (!el) return;
+		if (!this.isFocusable(el)) {
+			el.setAttribute('tabindex', '-1');
+			el.addEventListener(
+				'blur',
+				() => {
+					el.removeAttribute('tabindex');
+				},
+				{ once: true }
+			);
 		}
+		el.focus();
 	},
 };
 
