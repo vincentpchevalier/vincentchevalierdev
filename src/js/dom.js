@@ -22,7 +22,10 @@ const DOM = {
 	setDOMElements() {
 		const hash = window.location.hash.replace(/^#/, '');
 		const el = document.getElementById(hash);
-		this.focusOnElement(el);
+
+		if (!document.referrer.includes(location.origin)) {
+			this.focusOnElement(el);
+		}
 
 		THEME.init();
 		this.mode = THEME.getMode();
