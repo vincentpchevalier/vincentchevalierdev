@@ -4,6 +4,12 @@ const DOM = {
 	footer: null,
 	toTop: null,
 	isHome: location.pathname.includes('index.html') || location.pathname === '/',
+
+	init() {
+		this.setDOMElements();
+		this.setObservers();
+	},
+
 	// OBSERVERS
 	// watches any changes to the THEME, stores choice in Local Storage, and updates the CONTACT form styles
 	observeThemeChange() {
@@ -27,6 +33,7 @@ const DOM = {
 		});
 	},
 
+	// watches for user to scroll down and intersect with the footer to show To Top button
 	observeScrollDistance() {
 		const footerObserver = new IntersectionObserver(this.showToTop.bind(this), {
 			root: null,
@@ -35,5 +42,30 @@ const DOM = {
 		});
 
 		footerObserver.observe(this.footer);
+	},
+
+	showToTop(entries) {
+		const [entry] = entries;
+		if (!entry.isIntersecting) {
+			this.toTop.classList.remove('visible');
+			return;
+		}
+		this.toTop.classList.add('visible');
+	},
+
+	setObservers() {
+		this.observeThemeChange();
+		this.observeScrollDistance();
+	},
+
+	setDOMElements() {
+		this.footer = this.isHome
+			? document.querySelector('#home footer')
+			: document.querySelector('#projects footer');
+
+		this.footer.querySelector('.current-year').textContent =
+			new Date().getFullYear();
+
+		this.toTop = document.querySelector('.to-top');
 	},
 };
