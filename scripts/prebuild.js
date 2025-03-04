@@ -13,6 +13,7 @@ try {
 
 	const projects = data.projects;
 	const metadata = data.metadata;
+	const pages = data.pages;
 
 	const skills = Array.from(
 		new Set(
@@ -32,7 +33,7 @@ try {
 	metadata.version = version;
 	metadata.buildDate = buildDate;
 
-	const locals = { skills, projects, metadata };
+	const locals = { skills, projects, metadata, pages };
 
 	config.plugins['posthtml-expressions'].locals = locals;
 
