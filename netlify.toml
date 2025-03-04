@@ -17,3 +17,18 @@ for = "/*"
   X-Frame-Options = "DENY"
   Referrer-Policy = "no-referrer"
   Permissions-Policy = "geolocation=(), microphone=()"
+
+[[redirects]]
+  from = "/home"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/projects"
+  to = "/projects.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

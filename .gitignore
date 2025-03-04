@@ -35,3 +35,6 @@ src/js/version.js
 
 # IDE & Editor Configs
 .vscode/
+
+# Local Netlify folder
+.netlify
