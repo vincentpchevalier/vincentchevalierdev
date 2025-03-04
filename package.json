@@ -1,6 +1,6 @@
 {
 	"name": "vincentchevalierdev",
-	"version": "1.4.0",
+	"version": "1.5.0",
 	"description": "Portfolio website for Vincent P Chevalier.",
 	"scripts": {
 		"clean:output": "rimraf dist",
