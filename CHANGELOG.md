@@ -4,6 +4,31 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.5.0] - 2025-03-04
+
+### Added
+
+- Created a new DOM module to handle DOM operations and observer setup.
+- Introduced DOM.init() function to initialize DOM elements and observers.
+- Integrated THEME and CONTACT modules within DOM.init().
+- Added v to version number text in footer and aria-label for version metadata.
+- Added a pages array to the site data object and integrated it into the prebuild script.
+- Added redirects to the Netlify configuration file.
+
+### Changed
+
+- Refactored code for improved readability.
+- Moved page-specific variables into the new DOM module.
+- Converted the header section into an include template.
+- Built the header template dynamically with a loop for page links.
+
+### Fixed
+
+- Ensured focus does not shift unnecessarily during page navigation.
+- Fixed accessibility issues related to the menu.
+- Removed unused code.
+- Added .gitignore entry for the Netlify folder.
+
 ## [1.4.0] - 2025-02-21
 
 ### Added
